@@ -59,7 +59,7 @@ window.SPECIAL_TEST_RULES = {
   "1020260304", "1020260305"
 ].forEach(function (code) {
   window.SPECIAL_TEST_RULES.byCode[code] = {
-    ref: "ทดสอบเป็นคู่ โดยไม่รวมค่าสายไฟฟ้าสำหรับทดสอบ Tensile strength",
+    ref: "ทดสอบเป็นคู่ โดยราคาดังกล่าว ไม่รวมค่าสายไฟฟ้าสำหรับทดสอบ Tensile strength",
     pairTests: ["Tensile strength without additional accessories"]
   };
 });
