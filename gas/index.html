@@ -118,9 +118,7 @@
   <div id="result"></div>
 
   <footer>
-    หัวข้อทดสอบ ราคา และจำนวนสุ่ม อ้างอิงจากฐานข้อมูล
-    <a href="https://datastudio.google.com/u/1/reporting/cb1b305f-ef53-4d0e-9d32-b2e08f932f63/page/LpktB" target="_blank" rel="noopener">PEA Acceptance Test Laboratory</a>
-    — ราคาโดยประมาณ โปรดตรวจสอบกับหน่วยงานทดสอบอีกครั้ง
+    กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.) การไฟฟ้าส่วนภูมิภาค (กฟภ.)
   </footer>
 </div>
 
@@ -133,7 +131,6 @@
   const SPECIAL = window.SPECIAL_TEST_RULES || { perTestAlways1: [], byCode: {} };
   const $ = (id) => document.getElementById(id);
   const fmt = (n) => n.toLocaleString("th-TH");
-
 
   // ---------- sampling engine (rule comes embedded in each material, from the sheet) ----------
   function computeSamples(rule, qty) {

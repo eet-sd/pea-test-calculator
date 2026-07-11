@@ -55,19 +55,6 @@ def main():
         "let MATS = [];",
         "MATS declaration",
     )
-    html = replace_once(
-        html,
-        '  document.getElementById("snap").textContent = window.DATA_SNAPSHOT || "-";\n',
-        "",
-        "snapshot assignment",
-    )
-    # GAS reads the sheet live, so the as-of date is dropped entirely
-    html = replace_once(
-        html,
-        '(ข้อมูล ณ วันที่ <span id="snap"></span>) ',
-        "",
-        "footer snapshot",
-    )
     html = replace_once(html, "})();", BOOTSTRAP, "IIFE close / bootstrap")
 
     GAS.mkdir(exist_ok=True)
