@@ -63,7 +63,7 @@ def main():
     )
     html = replace_once(
         html,
-        '(snapshot <span id="snap"></span>)',
+        '(ข้อมูล ณ วันที่ <span id="snap"></span>)',
         "(อ่านข้อมูลสดจากชีตทุกครั้งที่เปิด)",
         "footer snapshot",
     )
