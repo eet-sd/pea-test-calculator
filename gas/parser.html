@@ -1,0 +1,128 @@
+<script>
+// JS port of tools/convert_data.py :: parse_sampling / parse_tests
+// Keep semantics identical to the Python version — verified by a 213-row parity test.
+
+function normalizeNumbers(s) {
+  return s.replace(/(\d),(?=\d)/g, "$1"); // "35,001" -> "35001"
+}
+
+function parseSampling(text) {
+  var raw = String(text || "").trim();
+  var t = normalizeNumbers(raw);
+  var low = t.toLowerCase();
+
+  if (t.indexOf("ไม่กำหนด") !== -1) return { type: "none" };
+  if (low.indexOf("sqrt 3") !== -1 || t.indexOf("รากที่ 3") !== -1 || t.indexOf("รากที่สาม") !== -1) {
+    return { type: "cbrt" };
+  }
+  if (t.indexOf("%") !== -1) {
+    var mp = t.match(/(\d+)\s*%/);
+    var mm = low.match(/not less than (\d+)\s*(?:set|ตัว|ชุด)/);
+    return { type: "pct", pct: mp ? parseInt(mp[1], 10) : 5, min: mm ? parseInt(mm[1], 10) : 5 };
+  }
+  if (/^\d+$/.test(t.trim())) return { type: "fixed", n: parseInt(t.trim(), 10) };
+
+  if (low.indexOf("e1") !== -1) {
+    // "2 000" -> "2000" (space thousands separator used in the E1/E2 text)
+    var lowE = low.replace(/(\d) (?=\d{3}\b)/g, "$1");
+    var tiersE = [];
+    var reE = /(?:n\s*[≤<=]+\s*(\d+)|(\d+)\s*(?:\\?<|<)\s*n\s*[≤<=]+\s*(\d+))\s*e1\s*:\s*(\d+)\s*e2\s*:\s*(\d+)/g;
+    var mE;
+    while ((mE = reE.exec(lowE)) !== null) {
+      var lo, hi;
+      if (mE[1] !== undefined) { lo = 1; hi = parseInt(mE[1], 10); }
+      else { lo = parseInt(mE[2], 10) + 1; hi = parseInt(mE[3], 10); }
+      tiersE.push([lo, hi, parseInt(mE[4], 10), parseInt(mE[5], 10)]);
+    }
+    if (!tiersE.length) return { type: "none" };
+    tiersE.sort(function (a, b) { return a[0] - b[0]; });
+    tiersE[tiersE.length - 1][1] = null; // open-ended top tier
+    return { type: "e1e2", tiers: tiersE };
+  }
+
+  // generic "range : n" clauses
+  var tiers = [];
+  var re = /([^:]+?)\s*:\s*(\d+)/g;
+  var m;
+  while ((m = re.exec(t)) !== null) {
+    var d = m[1].trim().toLowerCase();
+    var n = parseInt(m[2], 10);
+    var r = null, m2;
+    if ((m2 = d.match(/(\d+)\s*(?:ถึง|to|–|-)\s*(\d+)\s*$/))) {
+      r = [parseInt(m2[1], 10), parseInt(m2[2], 10)];
+    } else if (/(?:up\s+to|not\s+more\s+than|no\s+more\s+than|ไม่เกิน|not\s+exceeding)\s*(\d+)\s*$/.test(d)) {
+      r = [1, parseInt(d.match(/(\d+)\s*$/)[1], 10)];
+    } else if (/(?:under|less\s+than|\\?<)\s*(\d+)\s*$/.test(d)) {
+      r = [1, parseInt(d.match(/(\d+)\s*$/)[1], 10) - 1];
+    } else if (/(?:more\s+than|มากกว่า|over|\\?>)\s*(\d+)\s*$/.test(d)) {
+      r = [parseInt(d.match(/(\d+)\s*$/)[1], 10) + 1, null];
+    } else if (/(\d+)\s*(?:ขึ้นไป|and\s+more|and\s+above)\s*$/.test(d)) {
+      r = [parseInt(d.match(/(\d+)/)[1], 10), null];
+    } else if ((m2 = d.match(/(\d+)\s*$/))) {
+      var v = parseInt(m2[1], 10);
+      r = [v, v];
+    }
+    if (r !== null) tiers.push([r[0], r[1], n]);
+  }
+  if (!tiers.length) return { type: "none" };
+  tiers.sort(function (a, b) {
+    var am = a[1] === null ? 1e9 : a[1], bm = b[1] === null ? 1e9 : b[1];
+    return a[0] - b[0] || am - bm;
+  });
+  if (tiers[0][0] > 1) tiers[0][0] = 1; // extend first tier down to qty 1
+  for (var i = 0; i < tiers.length - 1; i++) { // close gaps like "less than 500" + "501 to 1000"
+    if (tiers[i][1] !== null && tiers[i + 1][0] > tiers[i][1] + 1) tiers[i][1] = tiers[i + 1][0] - 1;
+  }
+  return { type: "tiers", tiers: tiers };
+}
+
+function parseTests(cell) {
+  var text = String(cell || "").trim();
+  var perSample = null;
+  var mh = text.match(/ค่าทดสอบตัวอย่างละ\s*([\d,\.]+)\s*บาท/);
+  if (mh) {
+    perSample = Math.round(parseFloat(mh[1].replace(/,/g, "")));
+    text = text.slice(mh.index + mh[0].length);
+  }
+  var tests = [];
+  var items = text.split(/\s*-\s+/);
+  for (var i = 0; i < items.length; i++) {
+    var item = items[i].trim();
+    if (!item) continue;
+    var m = item.match(/^(.+?)\s*\((\d[\d,]*)\)\s*$/);
+    if (m) tests.push({ name: m[1].trim().replace(/,+$/, ""), price: parseInt(m[2].replace(/,/g, ""), 10) });
+  }
+  var sum = tests.reduce(function (s, x) { return s + x.price; }, 0);
+  return { tests: tests, perSample: perSample !== null ? perSample : sum };
+}
+
+function splitDashItems(cell) {
+  return String(cell || "").split(/\s*-\s+/).map(function (s) { return s.trim(); }).filter(Boolean);
+}
+
+// rows: raw sheet values (array of arrays), row 0 = header
+function buildMaterials(rows) {
+  var mats = [], seen = {};
+  for (var i = 0; i < rows.length; i++) {
+    var c = rows[i];
+    var code = String(c[0] || "").trim();
+    if (!/^\d{10}$/.test(code) || seen[code]) continue;
+    seen[code] = true;
+    var pt = parseTests(c[5]);
+    mats.push({
+      code: code,
+      name: String(c[1] || "").trim(),
+      spec: String(c[2] || "").trim(),
+      samplingText: String(c[3] || "").trim(),
+      sampling: parseSampling(c[3]),
+      samplingSource: splitDashItems(c[4]).join(" ") || String(c[4] || "").trim(),
+      tests: pt.tests,
+      perSample: pt.perSample,
+      institute: splitDashItems(c[6]),
+      specUrl: (String(c[7] || "").indexOf("http") === 0) ? String(c[7]).trim() : ""
+    });
+  }
+  mats.sort(function (a, b) { return a.code < b.code ? -1 : 1; });
+  return mats;
+}
+</script>
