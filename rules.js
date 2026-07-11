@@ -23,19 +23,19 @@ window.SPECIAL_TEST_RULES = {
   byCode: {
     // Hotline clamps (สเปค RHOT-081/2561, คู่มือตรวจรับ Hotline clamp 2567):
     // Temperature rise ทดสอบเฉพาะกรณีสุ่ม 10 ตัวอย่าง โดยแบ่ง Torque 6 / Temp rise 4
-    "1020330005": { ref: "คู่มือตรวจรับ Hotline clamp (RHOT-081/2561)",
+    "1020330005": { ref: "อ้างอิง: สเปคเลขที่ RHOT-081/2561",
       perTestBySample: {
         "2":  { "Temperature rise": 0 },
         "4":  { "Temperature rise": 0 },
         "10": { "Torque": 6, "Temperature rise": 4 }
       } },
-    "1020330006": { ref: "คู่มือตรวจรับ Hotline clamp (RHOT-081/2561)",
+    "1020330006": { ref: "อ้างอิง: สเปคเลขที่ RHOT-081/2561",
       perTestBySample: {
         "2":  { "Temperature rise": 0 },
         "4":  { "Temperature rise": 0 },
         "10": { "Torque": 6, "Temperature rise": 4 }
       } },
-    "1020330104": { ref: "คู่มือตรวจรับ Hotline clamp (RHOT-081/2561)",
+    "1020330104": { ref: "อ้างอิง: สเปคเลขที่ RHOT-081/2561",
       perTestBySample: {
         "2":  { "Temperature rise": 0 },
         "4":  { "Temperature rise": 0 },
@@ -43,10 +43,9 @@ window.SPECIAL_TEST_RULES = {
       } },
 
     // ALUMINIUM INGOT (RCBL-009/2568): OES ทดสอบครบทุกตัวอย่าง (ยกเว้นจากกติกา 1 ตัวอย่างเสมอ)
-    "1020200200": { ref: "OES ทดสอบทุกตัวอย่าง (RCBL-009/2568)",
-      fullTests: ["Chemical composition (OES)"] },
-    "1020200201": { ref: "OES ทดสอบทุกตัวอย่าง (RCBL-009/2568)",
-      fullTests: ["Chemical composition (OES)"] }
+    // ไม่ใส่ ref — คิดทุกตัวอย่างเฉยๆ โดยไม่แสดงหมายเหตุใต้ตาราง
+    "1020200200": { fullTests: ["Chemical composition (OES)"] },
+    "1020200201": { fullTests: ["Chemical composition (OES)"] }
   }
 };
 
@@ -60,7 +59,7 @@ window.SPECIAL_TEST_RULES = {
   "1020260304", "1020260305"
 ].forEach(function (code) {
   window.SPECIAL_TEST_RULES.byCode[code] = {
-    ref: "Tensile (Preformed) ทดสอบเป็นคู่ ราคาต่อคู่ (RCBL-058/2563, RCBL-070/2567)",
+    ref: "ทดสอบเป็นคู่ โดยไม่รวมค่าสายไฟฟ้าสำหรับทดสอบ Tensile strength",
     pairTests: ["Tensile strength without additional accessories"]
   };
 });

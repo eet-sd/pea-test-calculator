@@ -174,7 +174,9 @@
       }
     }
     for (const key of SPECIAL.perTestAlways1) {
-      if (lower.includes(key.toLowerCase())) return { count: Math.min(1, samples), special: true };
+      if (lower.includes(key.toLowerCase())) {
+        return { count: Math.min(1, samples), special: true, badge: "ทดสอบจำนวน 1 ตัวอย่างต่องวด" };
+      }
     }
     return { count: samples, special: false };
   }
@@ -320,7 +322,7 @@
         const line = (t.price || 0) * pc.count;
         grand += line;
         const countCell = pc.count === 0 ? "ไม่ทดสอบ" : fmt(pc.count) + (pc.unit ? " " + pc.unit : "");
-        rows += "<tr><td>" + esc(t.name) + (pc.special ? ' <span class="special">★ เงื่อนไขพิเศษรายหัวข้อ</span>' : "") + "</td>" +
+        rows += "<tr><td>" + esc(t.name) + (pc.special ? ' <span class="special">★' + (pc.badge ? " " + esc(pc.badge) : "") + "</span>" : "") + "</td>" +
                 '<td class="num">' + countCell + "</td>" +
                 '<td class="num">' + fmt(t.price || 0) + "</td>" +
                 '<td class="num">' + fmt(line) + "</td></tr>";
@@ -330,7 +332,7 @@
               '<tfoot><tr><td colspan="3">รวมค่าทดสอบโดยประมาณ</td><td class="num">' + fmt(grand) + "</td></tr></tfoot></table></div>";
       const special = SPECIAL.byCode[m.code];
       if (special && special.ref) {
-        html += '<ul class="notes"><li>เงื่อนไขพิเศษรายหัวข้อ อ้างอิง: ' + esc(special.ref) + "</li></ul>";
+        html += '<ul class="notes"><li>' + esc(special.ref) + "</li></ul>";
       }
     }
 
