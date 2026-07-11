@@ -61,10 +61,11 @@ def main():
         "",
         "snapshot assignment",
     )
+    # GAS reads the sheet live, so the as-of date is dropped entirely
     html = replace_once(
         html,
-        '(ข้อมูล ณ วันที่ <span id="snap"></span>)',
-        "(อ่านข้อมูลสดจากชีตทุกครั้งที่เปิด)",
+        '(ข้อมูล ณ วันที่ <span id="snap"></span>) ',
+        "",
         "footer snapshot",
     )
     html = replace_once(html, "})();", BOOTSTRAP, "IIFE close / bootstrap")
