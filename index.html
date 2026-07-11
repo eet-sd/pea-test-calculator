@@ -5,16 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ค่าทดสอบเพื่อการตรวจรับพัสดุ กฟภ.</title>
 <style>
+  /* โทนสีอ้างอิงเว็บ กฟภ. (pea.co.th): ม่วงแดง #a80689 บนพื้นขาว ตัวอักษร #101828 */
   :root {
-    --bg: #f5f6f8; --card: #ffffff; --ink: #1e2430; --muted: #5c6675;
-    --line: #dde1e7; --accent: #6d28d9; --accent-soft: #ede9fe;
+    --bg: #f7f5f8; --card: #ffffff; --ink: #101828; --muted: #667085;
+    --line: #d9d9d9; --accent: #a80689; --accent-soft: #faeaf6;
     --warn-bg: #fef3c7; --warn-ink: #92400e; --warn-line: #fcd34d;
     --ok-bg: #ecfdf5; --ok-ink: #065f46;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #14161b; --card: #1e2128; --ink: #e8eaf0; --muted: #9aa3b2;
-      --line: #343a46; --accent: #a78bfa; --accent-soft: #2e2454;
+      --bg: #17121a; --card: #211a25; --ink: #ece7ef; --muted: #a49aac;
+      --line: #3d3343; --accent: #e668c8; --accent-soft: #46163a;
       --warn-bg: #3a2e12; --warn-ink: #fbd38d; --warn-line: #6b5416;
       --ok-bg: #12352a; --ok-ink: #86efac;
     }
@@ -72,7 +73,7 @@
   }
   .sample-line .n { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
   .sample-line input { width: 90px; padding: 6px 10px; text-align: center; font-weight: 700; }
-  .rule-src { font-size: .85rem; color: var(--muted); flex-basis: 100%; }
+  .rule-src { font-size: .85rem; color: var(--muted); flex-basis: 100%; white-space: pre-line; }
   .banner {
     background: var(--warn-bg); color: var(--warn-ink); border: 1px solid var(--warn-line);
     border-radius: 10px; padding: 12px 14px; margin: 14px 0; font-size: .95rem;
@@ -302,17 +303,16 @@
     if (manualSamples !== null) samples = manualSamples;
 
     const srcInfo = m.samplingSource ? " (ที่มา: " + esc(m.samplingSource) + ")" : "";
-    const ruleInfo = 'กติกาสุ่ม: ' + esc(m.samplingText || "-");
+    const ruleInfo = 'จำนวนสุ่ม:\n' + esc(m.samplingText || "-");
     if (samples === null) {
       html += '<div class="banner">⚠ ชีตระบุจำนวนสุ่มของรหัสนี้เป็น "' + esc(m.samplingText || "ไม่กำหนด") +
               '" — กรอกจำนวนสุ่มเองด้านล่างเพื่อคำนวณค่าทดสอบ</div>';
       html += '<div class="sample-line">จำนวนสุ่มทดสอบ <input type="number" id="sampleEdit" min="1" step="1" placeholder="?"> ตัวอย่าง' + srcInfo +
               '<span class="rule-src">' + ruleInfo + "</span></div>";
     } else {
-      const e1e2 = computed && computed.e1 !== undefined && manualSamples === null
+      const e1e2 = computed && computed.e1 !== undefined
         ? " (E1: " + computed.e1 + " + E2: " + computed.e2 + ")" : "";
-      html += '<div class="sample-line">จำนวนสุ่มทดสอบ <span class="n">' + fmt(samples) + "</span> ตัวอย่าง" + e1e2 + srcInfo + " " +
-              '<input type="number" id="sampleEdit" min="1" step="1" value="' + samples + '" title="แก้ไขจำนวนสุ่มเองได้">' +
+      html += '<div class="sample-line">จำนวนสุ่มทดสอบ <span class="n">' + fmt(samples) + "</span> ตัวอย่าง" + e1e2 + srcInfo +
               '<span class="rule-src">' + ruleInfo + "</span></div>";
     }
 
