@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ค่าทดสอบเพื่อการตรวจรับพัสดุ กฟภ.</title>
+<style>
+  :root {
+    --bg: #f5f6f8; --card: #ffffff; --ink: #1e2430; --muted: #5c6675;
+    --line: #dde1e7; --accent: #6d28d9; --accent-soft: #ede9fe;
+    --warn-bg: #fef3c7; --warn-ink: #92400e; --warn-line: #fcd34d;
+    --ok-bg: #ecfdf5; --ok-ink: #065f46;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161b; --card: #1e2128; --ink: #e8eaf0; --muted: #9aa3b2;
+      --line: #343a46; --accent: #a78bfa; --accent-soft: #2e2454;
+      --warn-bg: #3a2e12; --warn-ink: #fbd38d; --warn-line: #6b5416;
+      --ok-bg: #12352a; --ok-ink: #86efac;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: "Leelawadee UI", "Segoe UI", Tahoma, system-ui, sans-serif;
+    font-size: 16px; line-height: 1.55;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 24px 16px 64px; }
+  header h1 { font-size: 1.45rem; margin: 0 0 4px; }
+  header p { margin: 0 0 20px; color: var(--muted); font-size: .95rem; }
+
+  .panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  label { display: block; font-weight: 600; margin-bottom: 6px; }
+  .hint { font-weight: 400; color: var(--muted); font-size: .85rem; }
+  input[type="text"], input[type="number"] {
+    width: 100%; padding: 11px 13px; font: inherit; color: inherit;
+    background: var(--bg); border: 1.5px solid var(--line); border-radius: 10px; outline: none;
+  }
+  input:focus { border-color: var(--accent); }
+  .row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
+  .row > div { flex: 1 1 220px; }
+
+  /* search suggestions */
+  .search-box { position: relative; }
+  #clearBtn {
+    position: absolute; right: 8px; bottom: 7px; width: 30px; height: 30px;
+    border: 0; border-radius: 50%; cursor: pointer; font-size: 1rem; line-height: 1;
+    background: var(--line); color: var(--muted);
+  }
+  #clearBtn:hover { background: var(--accent-soft); color: var(--accent); }
+  .suggest {
+    position: absolute; z-index: 10; left: 0; right: 0; top: calc(100% + 4px);
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    max-height: 320px; overflow-y: auto; box-shadow: 0 8px 24px rgba(0,0,0,.14);
+  }
+  .suggest button {
+    display: block; width: 100%; text-align: left; padding: 9px 13px;
+    background: none; border: 0; font: inherit; color: inherit; cursor: pointer;
+  }
+  .suggest button:hover, .suggest button.active { background: var(--accent-soft); }
+  .suggest .code { font-weight: 700; font-variant-numeric: tabular-nums; margin-right: 8px; }
+  .suggest .none { padding: 10px 13px; color: var(--muted); }
+
+  /* result */
+  #result { margin-top: 22px; }
+  .mat-head { font-size: 1.08rem; margin: 0 0 2px; }
+  .mat-head .code { color: var(--accent); font-weight: 800; }
+  .sub { color: var(--muted); font-size: .9rem; margin: 0 0 14px; }
+  .sample-line {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    background: var(--accent-soft); border-radius: 10px; padding: 12px 14px; margin: 14px 0;
+  }
+  .sample-line .n { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+  .sample-line input { width: 90px; padding: 6px 10px; text-align: center; font-weight: 700; }
+  .rule-src { font-size: .85rem; color: var(--muted); flex-basis: 100%; }
+  .banner {
+    background: var(--warn-bg); color: var(--warn-ink); border: 1px solid var(--warn-line);
+    border-radius: 10px; padding: 12px 14px; margin: 14px 0; font-size: .95rem;
+  }
+  table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+  th, td { padding: 9px 10px; border-bottom: 1px solid var(--line); text-align: left; }
+  th { font-size: .85rem; color: var(--muted); font-weight: 600; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .table-scroll { overflow-x: auto; }
+  tfoot td { font-weight: 800; border-bottom: 0; border-top: 2px solid var(--ink); }
+  .special { font-size: .8rem; color: var(--accent); }
+  .notes { margin: 14px 0 0; padding: 0 0 0 1.2em; color: var(--muted); font-size: .9rem; }
+  .notes li { margin-bottom: 3px; }
+  .inst { margin-top: 14px; font-size: .9rem; }
+  .inst span { color: var(--muted); }
+  footer { margin-top: 28px; color: var(--muted); font-size: .82rem; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>ค่าทดสอบเพื่อการตรวจรับพัสดุ กฟภ.</h1>
+    <p>กรอกรหัสพัสดุหรือชื่อพัสดุ พร้อมจำนวนที่ซื้อ (ส่งมอบต่องวด) เพื่อดูหัวข้อทดสอบ จำนวนสุ่มตัวอย่าง และค่าทดสอบโดยประมาณ</p>
+  </header>
+
+  <div class="panel">
+    <div class="search-box">
+      <label for="q">รหัสพัสดุ หรือชื่อพัสดุ <span class="hint">เช่น 1010110201 หรือ BOLT,MACHINE</span></label>
+      <input type="text" id="q" autocomplete="off" placeholder="พิมพ์เพื่อค้นหา…" style="padding-right:44px">
+      <button type="button" id="clearBtn" title="ล้างคำค้น" hidden>✕</button>
+      <div class="suggest" id="suggest" hidden></div>
+    </div>
+    <div class="row">
+      <div>
+        <label for="qty">จำนวนที่ซื้อ / ส่งมอบต่องวด <span class="hint" id="unitHint">(ตัว)</span></label>
+        <input type="number" id="qty" min="1" step="1" placeholder="เช่น 500">
+      </div>
+    </div>
+  </div>
+
+  <div id="result"></div>
+
+  <footer>
+    หัวข้อทดสอบ ราคา และจำนวนสุ่ม อ้างอิงจากฐานข้อมูล
+    <a href="https://datastudio.google.com/u/1/reporting/cb1b305f-ef53-4d0e-9d32-b2e08f932f63/page/LpktB" target="_blank" rel="noopener">PEA Acceptance Test Laboratory</a>
+    (snapshot <span id="snap"></span>) — ราคาโดยประมาณ โปรดตรวจสอบกับหน่วยงานทดสอบอีกครั้ง
+  </footer>
+</div>
+
+<script src="data.js"></script>
+<script src="rules.js"></script>
+<script>
+(function () {
+  "use strict";
+  const MATS = window.MATERIALS || [];
+  const SPECIAL = window.SPECIAL_TEST_RULES || { perTestAlways1: [], byCode: {} };
+  const $ = (id) => document.getElementById(id);
+  const fmt = (n) => n.toLocaleString("th-TH");
+
+  document.getElementById("snap").textContent = window.DATA_SNAPSHOT || "-";
+
+  // ---------- sampling engine (rule comes embedded in each material, from the sheet) ----------
+  function computeSamples(rule, qty) {
+    if (!rule) return null;
+    switch (rule.type) {
+      case "fixed": return { n: rule.n };
+      case "cbrt":  return { n: Math.ceil(Math.cbrt(qty) - 1e-9) };
+      case "pct":   return { n: Math.max(Math.ceil(qty * rule.pct / 100), rule.min) };
+      case "tiers":
+        for (const [min, max, n] of rule.tiers) {
+          if (qty >= min && (max === null || qty <= max)) return { n };
+        }
+        return null;
+      case "e1e2":
+        for (const [min, max, e1, e2] of rule.tiers) {
+          if (qty >= min && (max === null || qty <= max)) return { n: e1 + e2, e1, e2 };
+        }
+        return null;
+      default: return null; // "none" → manual input
+    }
+  }
+  function perTestCount(mat, testName, samples) {
+    const lower = testName.toLowerCase();
+    const findIn = (map) => {
+      if (!map) return undefined;
+      for (const key of Object.keys(map)) {
+        if (lower.includes(key.toLowerCase())) return map[key];
+      }
+      return undefined;
+    };
+    const inList = (list) => (list || []).some((key) => lower.includes(key.toLowerCase()));
+    const special = SPECIAL.byCode[mat.code];
+    if (special) {
+      const v = findIn(special.perTestBySample && special.perTestBySample[String(samples)]);
+      if (v !== undefined) return { count: v, special: true };
+      if (inList(special.pairTests)) {
+        return { count: Math.floor(samples / 2), special: true, unit: "คู่" };
+      }
+      if (inList(special.fullTests)) {
+        return { count: samples, special: false };
+      }
+    }
+    for (const key of SPECIAL.perTestAlways1) {
+      if (lower.includes(key.toLowerCase())) return { count: Math.min(1, samples), special: true };
+    }
+    return { count: samples, special: false };
+  }
+
+  // ---------- search ----------
+  const q = $("q"), suggest = $("suggest"), qtyEl = $("qty"), result = $("result"), clearBtn = $("clearBtn");
+  let selected = null;       // chosen material
+  let manualSamples = null;  // user-overridden sample count
+  let activeIdx = -1;
+
+  function matches(term) {
+    const parts = term.toLowerCase().split(/\s+/).filter(Boolean);
+    if (!parts.length) return [];
+    return MATS.filter((m) => {
+      const hay = (m.code + " " + m.name).toLowerCase();
+      return parts.every((p) => hay.includes(p));
+    }).slice(0, 30);
+  }
+
+  function showSuggest(items) {
+    suggest.innerHTML = "";
+    activeIdx = -1;
+    if (!items.length) {
+      suggest.innerHTML = '<div class="none">ไม่พบพัสดุที่ตรงกับคำค้น</div>';
+    } else {
+      items.forEach((m) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.innerHTML = '<span class="code"></span><span class="nm"></span>';
+        b.querySelector(".code").textContent = m.code;
+        b.querySelector(".nm").textContent = m.name;
+        b.addEventListener("click", () => pick(m));
+        suggest.appendChild(b);
+      });
+    }
+    suggest.hidden = false;
+  }
+
+  function pick(m) {
+    selected = m;
+    manualSamples = null;
+    q.value = m.code + "  " + m.name;
+    suggest.hidden = true;
+    clearBtn.hidden = false;
+    render();
+    qtyEl.focus();
+  }
+
+  clearBtn.addEventListener("click", () => {
+    q.value = "";
+    selected = null;
+    manualSamples = null;
+    suggest.hidden = true;
+    clearBtn.hidden = true;
+    render();
+    q.focus();
+  });
+
+  q.addEventListener("input", () => {
+    selected = null;
+    manualSamples = null;
+    clearBtn.hidden = q.value.trim() === "";
+    const term = q.value.trim();
+    if (term.length < 2) { suggest.hidden = true; render(); return; }
+    const items = matches(term);
+    // auto-pick on exact 10-digit code match
+    if (/^\d{10}$/.test(term) && items.length === 1) { pick(items[0]); return; }
+    showSuggest(items);
+    render();
+  });
+  q.addEventListener("keydown", (e) => {
+    if (suggest.hidden) return;
+    const btns = [...suggest.querySelectorAll("button")];
+    if (!btns.length) return;
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      activeIdx = e.key === "ArrowDown" ? Math.min(activeIdx + 1, btns.length - 1) : Math.max(activeIdx - 1, 0);
+      btns.forEach((b, i) => b.classList.toggle("active", i === activeIdx));
+      btns[activeIdx].scrollIntoView({ block: "nearest" });
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      btns[Math.max(activeIdx, 0)].click();
+    } else if (e.key === "Escape") {
+      suggest.hidden = true;
+    }
+  });
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".search-box")) suggest.hidden = true;
+  });
+  qtyEl.addEventListener("input", () => { manualSamples = null; render(); });
+
+  // ---------- render ----------
+  function render() {
+    result.innerHTML = "";
+    if (!selected) return;
+    const m = selected;
+    const qty = parseInt(qtyEl.value, 10);
+
+    const card = document.createElement("div");
+    card.className = "panel";
+
+    let html = '<p class="mat-head">รหัสพัสดุ <span class="code">' + m.code + "</span> " + esc(m.name);
+    if (qty >= 1) html += " — ซื้อจำนวน " + fmt(qty) + " ตัว";
+    html += "</p>";
+    let subParts = ['ค่าทดสอบต่อ 1 ตัวอย่าง: ' + fmt(m.perSample || 0) + " บาท"];
+    if (m.spec) {
+      subParts.push("สเปค: " + (m.specUrl
+        ? '<a href="' + esc(m.specUrl) + '" target="_blank" rel="noopener">' + esc(m.spec) + "</a>"
+        : esc(m.spec)));
+    }
+    html += '<p class="sub">' + subParts.join(" · ") + "</p>";
+
+    if (!(qty >= 1)) {
+      html += '<div class="banner">กรอก "จำนวนที่ซื้อ / ส่งมอบต่องวด" เพื่อคำนวณจำนวนสุ่มและค่าทดสอบ</div>';
+      card.innerHTML = html;
+      result.appendChild(card);
+      return;
+    }
+
+    const computed = computeSamples(m.sampling, qty);
+    let samples = computed ? computed.n : null;
+    if (manualSamples !== null) samples = manualSamples;
+
+    const srcInfo = m.samplingSource ? " (ที่มา: " + esc(m.samplingSource) + ")" : "";
+    const ruleInfo = 'กติกาสุ่ม: ' + esc(m.samplingText || "-");
+    if (samples === null) {
+      html += '<div class="banner">⚠ ชีตระบุจำนวนสุ่มของรหัสนี้เป็น "' + esc(m.samplingText || "ไม่กำหนด") +
+              '" — กรอกจำนวนสุ่มเองด้านล่างเพื่อคำนวณค่าทดสอบ</div>';
+      html += '<div class="sample-line">จำนวนสุ่มทดสอบ <input type="number" id="sampleEdit" min="1" step="1" placeholder="?"> ตัวอย่าง' + srcInfo +
+              '<span class="rule-src">' + ruleInfo + "</span></div>";
+    } else {
+      const e1e2 = computed && computed.e1 !== undefined && manualSamples === null
+        ? " (E1: " + computed.e1 + " + E2: " + computed.e2 + ")" : "";
+      html += '<div class="sample-line">จำนวนสุ่มทดสอบ <span class="n">' + fmt(samples) + "</span> ตัวอย่าง" + e1e2 + srcInfo + " " +
+              '<input type="number" id="sampleEdit" min="1" step="1" value="' + samples + '" title="แก้ไขจำนวนสุ่มเองได้">' +
+              '<span class="rule-src">' + ruleInfo + "</span></div>";
+    }
+
+    if (samples !== null) {
+      let grand = 0;
+      let rows = "";
+      for (const t of m.tests) {
+        const pc = perTestCount(m, t.name, samples);
+        const line = (t.price || 0) * pc.count;
+        grand += line;
+        const countCell = pc.count === 0 ? "ไม่ทดสอบ" : fmt(pc.count) + (pc.unit ? " " + pc.unit : "");
+        rows += "<tr><td>" + esc(t.name) + (pc.special ? ' <span class="special">★ เงื่อนไขพิเศษรายหัวข้อ</span>' : "") + "</td>" +
+                '<td class="num">' + countCell + "</td>" +
+                '<td class="num">' + fmt(t.price || 0) + "</td>" +
+                '<td class="num">' + fmt(line) + "</td></tr>";
+      }
+      html += '<div class="table-scroll"><table><thead><tr><th>หัวข้อทดสอบ</th><th class="num">จำนวนตัวอย่าง</th><th class="num">ราคา/ตัวอย่าง (บาท)</th><th class="num">รวม (บาท)</th></tr></thead>' +
+              "<tbody>" + rows + "</tbody>" +
+              '<tfoot><tr><td colspan="3">รวมค่าทดสอบโดยประมาณ</td><td class="num">' + fmt(grand) + "</td></tr></tfoot></table></div>";
+      const special = SPECIAL.byCode[m.code];
+      if (special && special.ref) {
+        html += '<ul class="notes"><li>เงื่อนไขพิเศษรายหัวข้อ อ้างอิง: ' + esc(special.ref) + "</li></ul>";
+      }
+    }
+
+    if (m.institute && m.institute.length) {
+      html += '<p class="inst"><span>สถาบันทดสอบ:</span> ' + m.institute.map(esc).join(" · ") + "</p>";
+    }
+
+    card.innerHTML = html;
+    result.appendChild(card);
+
+    const se = card.querySelector("#sampleEdit");
+    if (se) {
+      se.addEventListener("input", () => {
+        const v = parseInt(se.value, 10);
+        manualSamples = v >= 1 ? v : null;
+        const pos = se.selectionStart;
+        render();
+        const se2 = result.querySelector("#sampleEdit");
+        if (se2) { se2.focus(); try { se2.setSelectionRange(pos, pos); } catch (_) {} }
+      });
+    }
+  }
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+})();
+</script>
+</body>
+</html>

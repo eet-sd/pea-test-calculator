@@ -1,0 +1,66 @@
+// เงื่อนไขพิเศษรายหัวข้อทดสอบ — ไฟล์นี้แก้ไขด้วยมือได้
+//
+// จำนวนสุ่มตัวอย่างหลักมาจากชีต (คอลัมน์ "จำนวนสุ่ม") ซึ่งถูกฝังใน data.js แล้ว
+// ไฟล์นี้เก็บเฉพาะกติกา "จำนวนตัวอย่างต่อหัวข้อทดสอบ" ที่ต่างจากจำนวนสุ่มรวม
+//
+// วิธีเพิ่ม (จับคู่ชื่อหัวข้อแบบ substring ไม่สนตัวพิมพ์):
+//  - perTestAlways1: หัวข้อที่ทดสอบเพียง 1 ตัวอย่างเสมอ
+//  - byCode[รหัสพัสดุ] รองรับ:
+//      perTestBySample: { "<จำนวนสุ่มรวม>": { "<ชื่อหัวข้อ>": จำนวน } }  (0 = ไม่ทดสอบ)
+//      fullTests: ["<ชื่อหัวข้อ>"]  → ยกเว้นจาก perTestAlways1 ทดสอบครบทุกตัวอย่าง
+//      pairTests: ["<ชื่อหัวข้อ>"]  → ทดสอบเป็นคู่ จำนวน = ปัดลง(จำนวนสุ่ม/2) ราคาคือราคาต่อคู่
+//      ref: ข้อความอ้างอิงแสดงใต้ตาราง
+
+window.SPECIAL_TEST_RULES = {
+
+  // ทดสอบ 1 ตัวอย่างเสมอ ไม่ว่าจำนวนสุ่มเท่าไร
+  perTestAlways1: [
+    "Dropping point",
+    "Chemical composition (OES)",
+    "Hardness"
+  ],
+
+  byCode: {
+    // Hotline clamps (สเปค RHOT-081/2561, คู่มือตรวจรับ Hotline clamp 2567):
+    // Temperature rise ทดสอบเฉพาะกรณีสุ่ม 10 ตัวอย่าง โดยแบ่ง Torque 6 / Temp rise 4
+    "1020330005": { ref: "คู่มือตรวจรับ Hotline clamp (RHOT-081/2561)",
+      perTestBySample: {
+        "2":  { "Temperature rise": 0 },
+        "4":  { "Temperature rise": 0 },
+        "10": { "Torque": 6, "Temperature rise": 4 }
+      } },
+    "1020330006": { ref: "คู่มือตรวจรับ Hotline clamp (RHOT-081/2561)",
+      perTestBySample: {
+        "2":  { "Temperature rise": 0 },
+        "4":  { "Temperature rise": 0 },
+        "10": { "Torque": 6, "Temperature rise": 4 }
+      } },
+    "1020330104": { ref: "คู่มือตรวจรับ Hotline clamp (RHOT-081/2561)",
+      perTestBySample: {
+        "2":  { "Temperature rise": 0 },
+        "4":  { "Temperature rise": 0 },
+        "10": { "Torque": 6, "Temperature rise": 4 }
+      } },
+
+    // ALUMINIUM INGOT (RCBL-009/2568): OES ทดสอบครบทุกตัวอย่าง (ยกเว้นจากกติกา 1 ตัวอย่างเสมอ)
+    "1020200200": { ref: "OES ทดสอบทุกตัวอย่าง (RCBL-009/2568)",
+      fullTests: ["Chemical composition (OES)"] },
+    "1020200201": { ref: "OES ทดสอบทุกตัวอย่าง (RCBL-009/2568)",
+      fullTests: ["Chemical composition (OES)"] }
+  }
+};
+
+// PREFORMED D/E (RCBL-058/2563, RCBL-070/2567):
+// Tensile strength without additional accessories (Preformed) ทดสอบเป็นคู่ ราคา 1,200 บาทต่อคู่
+// สุ่ม 3 → 1 คู่ = 1,200 บาท / สุ่ม 5 → 2 คู่ = 2,400 บาท
+[
+  "1020260202", "1020260203", "1020260204", "1020260205",
+  "1020260206", "1020260207", "1020260208", "1020260209",
+  "1020260300", "1020260301", "1020260302", "1020260303",
+  "1020260304", "1020260305"
+].forEach(function (code) {
+  window.SPECIAL_TEST_RULES.byCode[code] = {
+    ref: "Tensile (Preformed) ทดสอบเป็นคู่ ราคาต่อคู่ (RCBL-058/2563, RCBL-070/2567)",
+    pairTests: ["Tensile strength without additional accessories"]
+  };
+});
