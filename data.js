@@ -7513,13 +7513,25 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "Temperature rise test without additional accessories",
-    "price": 2600
+    "name": "Power-frequency voltage withstand tests  on secondary terminals",
+    "price": 560
+   },
+   {
+    "name": "Power-frequency voltage withstand tests  on primary terminals [Common mode (separate source) power-frequency withstand test]",
+    "price": 2040
+   },
+   {
+    "name": "Power-frequency voltage withstand tests  on primary terminals [Differential mode (induced) AC voltage test (Induced Overvoltage Test)]",
+    "price": 2230
+   },
+   {
+    "name": "Partial discharge measurement test",
+    "price": 3220
    }
   ],
-  "perSample": 2600,
+  "perSample": 8050,
   "institute": [
-   "สถาบันทดสอบกลาง"
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)"
   ],
   "specUrl": "https://drive.google.com/file/d/12ggiDkzqf4r1MLdW_m2Ane8V2bgtV-rg/view?usp=drivesdk"
  },
@@ -7546,13 +7558,25 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "Temperature rise test without additional accessories",
-    "price": 2600
+    "name": "Power-frequency voltage withstand tests  on secondary terminals",
+    "price": 560
+   },
+   {
+    "name": "Power-frequency voltage withstand tests  on primary terminals [Common mode (separate source) power-frequency withstand test]",
+    "price": 2040
+   },
+   {
+    "name": "Power-frequency voltage withstand tests  on primary terminals [Differential mode (induced) AC voltage test (Induced Overvoltage Test)]",
+    "price": 2230
+   },
+   {
+    "name": "Partial discharge measurement test",
+    "price": 3220
    }
   ],
-  "perSample": 2600,
+  "perSample": 8050,
   "institute": [
-   "สถาบันทดสอบกลาง"
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)"
   ],
   "specUrl": "https://drive.google.com/file/d/12ggiDkzqf4r1MLdW_m2Ane8V2bgtV-rg/view?usp=drivesdk"
  },
