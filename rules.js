@@ -23,20 +23,24 @@ window.SPECIAL_TEST_RULES = {
   byCode: {
     // Hotline clamps (สเปค RHOT-081/2561, คู่มือตรวจรับ Hotline clamp 2567):
     // Temperature rise ทดสอบเฉพาะกรณีสุ่ม 10 ตัวอย่าง โดยแบ่ง Torque 6 / Temp rise 4
+    // คีย์ "1" รองรับกรณีซื้อ 1 ตัว (จำนวนสุ่มถูกปรับลดเท่าจำนวนที่ซื้อ)
     "1020330005": { ref: "อ้างอิง: สเปคเลขที่ RHOT-081/2561",
       perTestBySample: {
+        "1":  { "Temperature rise": 0 },
         "2":  { "Temperature rise": 0 },
         "4":  { "Temperature rise": 0 },
         "10": { "Torque": 6, "Temperature rise": 4 }
       } },
     "1020330006": { ref: "อ้างอิง: สเปคเลขที่ RHOT-081/2561",
       perTestBySample: {
+        "1":  { "Temperature rise": 0 },
         "2":  { "Temperature rise": 0 },
         "4":  { "Temperature rise": 0 },
         "10": { "Torque": 6, "Temperature rise": 4 }
       } },
     "1020330104": { ref: "อ้างอิง: สเปคเลขที่ RHOT-081/2561",
       perTestBySample: {
+        "1":  { "Temperature rise": 0 },
         "2":  { "Temperature rise": 0 },
         "4":  { "Temperature rise": 0 },
         "10": { "Torque": 6, "Temperature rise": 4 }

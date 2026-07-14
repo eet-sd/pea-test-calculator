@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ค่าทดสอบเพื่อการตรวจรับพัสดุ กฟภ.</title>
+<title>ระบบตรวจสอบค่าบริการทดสอบ</title>
 <style>
   /* โทนสีอ้างอิงเว็บ กฟภ. (pea.co.th): ม่วงแดง #a80689 บนพื้นขาว ตัวอักษร #101828 */
   :root {
@@ -96,7 +96,7 @@
 <body>
 <div class="wrap">
   <header>
-    <h1>ค่าทดสอบเพื่อการตรวจรับพัสดุ กฟภ.</h1>
+    <h1>ระบบตรวจสอบค่าบริการทดสอบ</h1>
     <p>กรอกรหัสพัสดุหรือชื่อพัสดุ พร้อมจำนวนที่ซื้อ (ส่งมอบต่องวด) เพื่อดูหัวข้อทดสอบ จำนวนสุ่มตัวอย่าง และค่าทดสอบโดยประมาณ</p>
   </header>
 
@@ -298,6 +298,9 @@
 
     const computed = computeSamples(m.sampling, qty);
     let samples = computed ? computed.n : null;
+    // จำนวนสุ่มเกินจำนวนที่ซื้อไม่ได้ — ตารางสุ่มหลายรายการกำหนดขั้นต่ำสูงกว่าล็อตเล็กๆ
+    let clamped = false;
+    if (samples !== null && samples > qty) { samples = qty; clamped = true; }
     if (manualSamples !== null) samples = manualSamples;
 
     const srcInfo = m.samplingSource ? " (ที่มา: " + esc(m.samplingSource) + ")" : "";
@@ -308,9 +311,11 @@
       html += '<div class="sample-line">จำนวนสุ่มทดสอบ <input type="number" id="sampleEdit" min="1" step="1" placeholder="?"> ตัวอย่าง' + srcInfo +
               '<span class="rule-src">' + ruleInfo + "</span></div>";
     } else {
-      const e1e2 = computed && computed.e1 !== undefined
+      const e1e2 = !clamped && computed && computed.e1 !== undefined
         ? " (E1: " + computed.e1 + " + E2: " + computed.e2 + ")" : "";
-      html += '<div class="sample-line">จำนวนสุ่มทดสอบ <span class="n">' + fmt(samples) + "</span> ตัวอย่าง" + e1e2 + srcInfo +
+      const clampNote = clamped
+        ? " (ปรับลดเท่าจำนวนที่ซื้อ — ตารางกำหนด " + fmt(computed.n) + ")" : "";
+      html += '<div class="sample-line">จำนวนสุ่มทดสอบ <span class="n">' + fmt(samples) + "</span> ตัวอย่าง" + e1e2 + clampNote + srcInfo +
               '<span class="rule-src">' + ruleInfo + "</span></div>";
     }
 
