@@ -297,6 +297,7 @@
     }
 
     const computed = computeSamples(m.sampling, qty);
+    const manualMode = computed === null;
     let samples = computed ? computed.n : null;
     // จำนวนสุ่มเกินจำนวนที่ซื้อไม่ได้ — ตารางสุ่มหลายรายการกำหนดขั้นต่ำสูงกว่าล็อตเล็กๆ
     let clamped = false;
@@ -305,10 +306,13 @@
 
     const srcInfo = m.samplingSource ? " (ที่มา: " + esc(m.samplingSource) + ")" : "";
     const ruleInfo = 'จำนวนสุ่ม:\n' + esc(m.samplingText || "-");
-    if (samples === null) {
-      html += '<div class="banner">⚠ ชีตระบุจำนวนสุ่มของรหัสนี้เป็น "' + esc(m.samplingText || "ไม่กำหนด") +
-              '" — กรอกจำนวนสุ่มเองด้านล่างเพื่อคำนวณค่าทดสอบ</div>';
-      html += '<div class="sample-line">จำนวนสุ่มทดสอบ <input type="number" id="sampleEdit" min="1" step="1" placeholder="?"> ตัวอย่าง' + srcInfo +
+    if (manualMode) {
+      if (manualSamples === null) {
+        html += '<div class="banner">⚠ ชีตระบุจำนวนสุ่มของรหัสนี้เป็น "' + esc(m.samplingText || "ไม่กำหนด") +
+                '" — กรอกจำนวนสุ่มเองด้านล่างเพื่อคำนวณค่าทดสอบ</div>';
+      }
+      html += '<div class="sample-line">จำนวนสุ่มทดสอบ <input type="text" inputmode="numeric" id="sampleEdit" placeholder="?" value="' +
+              (manualSamples !== null ? manualSamples : "") + '"> ตัวอย่าง' + srcInfo +
               '<span class="rule-src">' + ruleInfo + "</span></div>";
     } else {
       const e1e2 = !clamped && computed && computed.e1 !== undefined
