@@ -5559,24 +5559,24 @@ window.MATERIALS = [
    "type": "tiers",
    "tiers": [
     [
-     0,
-     0,
+     1,
+     300,
+     5
+    ],
+    [
+     301,
+     2000,
      7
     ],
     [
-     0,
-     0,
+     2001,
+     5000,
      12
     ],
     [
-     0,
-     299,
+     5001,
+     10000,
      18
-    ],
-    [
-     300,
-     300,
-     5
     ]
    ]
   },
@@ -5615,24 +5615,24 @@ window.MATERIALS = [
    "type": "tiers",
    "tiers": [
     [
-     0,
-     0,
+     1,
+     300,
+     5
+    ],
+    [
+     301,
+     2000,
      7
     ],
     [
-     0,
-     0,
+     2001,
+     5000,
      12
     ],
     [
-     0,
-     299,
+     5001,
+     10000,
      18
-    ],
-    [
-     300,
-     300,
-     5
     ]
    ]
   },
@@ -5671,24 +5671,24 @@ window.MATERIALS = [
    "type": "tiers",
    "tiers": [
     [
-     0,
-     0,
+     1,
+     300,
+     5
+    ],
+    [
+     301,
+     2000,
      7
     ],
     [
-     0,
-     0,
+     2001,
+     5000,
      12
     ],
     [
-     0,
-     299,
+     5001,
+     10000,
      18
-    ],
-    [
-     300,
-     300,
-     5
     ]
    ]
   },
@@ -10429,11 +10429,56 @@ window.MATERIALS = [
   "spec": "TOR",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "คณะกรรมการกำหนด",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.01In, p.f.1.0 Balanced phase",
+     "In, p.f. 1.0 Balanced phase",
+     "In, p.f. 0.5 Balanced phase",
+     "In, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10443,11 +10488,56 @@ window.MATERIALS = [
   "spec": "TOR",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "คณะกรรมการกำหนด",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.01In, p.f.1.0 Balanced phase",
+     "In, p.f. 1.0 Balanced phase",
+     "In, p.f. 0.5 Balanced phase",
+     "In, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10457,11 +10547,56 @@ window.MATERIALS = [
   "spec": "TOR",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "คณะกรรมการกำหนด",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.01In, p.f.1.0 Balanced phase",
+     "In, p.f. 1.0 Balanced phase",
+     "In, p.f. 0.5 Balanced phase",
+     "In, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10471,11 +10606,55 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.05Ib, p.f.1.0 Balanced phase",
+     "Ib, p.f. 1.0 Balanced phase",
+     "Ib, p.f. 0.5 Balanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10485,11 +10664,55 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.05Ib, p.f.1.0 Balanced phase",
+     "Ib, p.f. 1.0 Balanced phase",
+     "Ib, p.f. 0.5 Balanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10499,11 +10722,55 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.05Ib, p.f.1.0 Balanced phase",
+     "Ib, p.f. 1.0 Balanced phase",
+     "Ib, p.f. 0.5 Balanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10513,11 +10780,55 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.05Ib, p.f.1.0 Balanced phase",
+     "Ib, p.f. 1.0 Balanced phase",
+     "Ib, p.f. 0.5 Balanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10527,11 +10838,55 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.05Ib, p.f.1.0 Balanced phase",
+     "Ib, p.f. 1.0 Balanced phase",
+     "Ib, p.f. 0.5 Balanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10541,11 +10896,55 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.05Ib, p.f.1.0 Balanced phase",
+     "Ib, p.f. 1.0 Balanced phase",
+     "Ib, p.f. 0.5 Balanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10555,11 +10954,56 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.05Ib, p.f.1.0 Balanced phase",
+     "Ib, p.f. 1.0 Balanced phase",
+     "Ib, p.f. 0.5 Balanced phase",
+     "Ib, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10569,11 +11013,56 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.05Ib, p.f.1.0 Balanced phase",
+     "Ib, p.f. 1.0 Balanced phase",
+     "Ib, p.f. 0.5 Balanced phase",
+     "Ib, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10583,11 +11072,56 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.05Ib, p.f.1.0 Balanced phase",
+     "Ib, p.f. 1.0 Balanced phase",
+     "Ib, p.f. 0.5 Balanced phase",
+     "Ib, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10597,11 +11131,56 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.05Ib, p.f.1.0 Balanced phase",
+     "Ib, p.f. 1.0 Balanced phase",
+     "Ib, p.f. 0.5 Balanced phase",
+     "Ib, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10611,11 +11190,56 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.05Ib, p.f.1.0 Balanced phase",
+     "Ib, p.f. 1.0 Balanced phase",
+     "Ib, p.f. 0.5 Balanced phase",
+     "Ib, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10625,11 +11249,56 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.05Ib, p.f.1.0 Balanced phase",
+     "Ib, p.f. 1.0 Balanced phase",
+     "Ib, p.f. 0.5 Balanced phase",
+     "Ib, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10639,11 +11308,56 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.01In, p.f.1.0 Balanced phase",
+     "In, p.f. 1.0 Balanced phase",
+     "In, p.f. 0.5 Balanced phase",
+     "In, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10653,11 +11367,56 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.01In, p.f.1.0 Balanced phase",
+     "In, p.f. 1.0 Balanced phase",
+     "In, p.f. 0.5 Balanced phase",
+     "In, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10667,11 +11426,56 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.01In, p.f.1.0 Balanced phase",
+     "In, p.f. 1.0 Balanced phase",
+     "In, p.f. 0.5 Balanced phase",
+     "In, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10681,11 +11485,56 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.01In, p.f.1.0 Balanced phase",
+     "In, p.f. 1.0 Balanced phase",
+     "In, p.f. 0.5 Balanced phase",
+     "In, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10695,11 +11544,56 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.01In, p.f.1.0 Balanced phase",
+     "In, p.f. 1.0 Balanced phase",
+     "In, p.f. 0.5 Balanced phase",
+     "In, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10709,11 +11603,56 @@ window.MATERIALS = [
   "spec": "RMTR-033/2560",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.01In, p.f.1.0 Balanced phase",
+     "In, p.f. 1.0 Balanced phase",
+     "In, p.f. 0.5 Balanced phase",
+     "In, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10723,11 +11662,56 @@ window.MATERIALS = [
   "spec": "RMTR-042/2568",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.01In, p.f.1.0 Balanced phase",
+     "In, p.f. 1.0 Balanced phase",
+     "In, p.f. 0.5 Balanced phase",
+     "In, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10737,11 +11721,56 @@ window.MATERIALS = [
   "spec": "RMTR-042/2568",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.01In, p.f.1.0 Balanced phase",
+     "In, p.f. 1.0 Balanced phase",
+     "In, p.f. 0.5 Balanced phase",
+     "In, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10751,11 +11780,56 @@ window.MATERIALS = [
   "spec": "RMTR-042/2568",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.01In, p.f.1.0 Balanced phase",
+     "In, p.f. 1.0 Balanced phase",
+     "In, p.f. 0.5 Balanced phase",
+     "In, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },
@@ -10765,11 +11839,56 @@ window.MATERIALS = [
   "spec": "RMTR-042/2568",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1200,
+     32
+    ],
+    [
+     1201,
+     3200,
+     50
+    ],
+    [
+     3201,
+     null,
+     80
+    ]
+   ]
   },
   "samplingSource": "สเปค",
-  "tests": [],
-  "perSample": 0,
+  "tests": [
+   {
+    "name": "1.AC voltage test",
+    "price": 340
+   },
+   {
+    "name": "2.Test of no-load condition",
+    "price": 240
+   },
+   {
+    "name": "3.Starting",
+    "price": 240
+   },
+   {
+    "name": "4.Accuracy Tests",
+    "price": 240,
+    "subItems": [
+     "0.01In, p.f.1.0 Balanced phase",
+     "In, p.f. 1.0 Balanced phase",
+     "In, p.f. 0.5 Balanced phase",
+     "In, p.f. 1.0 Unbalanced phase",
+     "Imax, p.f. 1.0 Balanced phase"
+    ]
+   },
+   {
+    "name": "5.Verification of the register",
+    "price": 250
+   }
+  ],
+  "perSample": 1310,
   "institute": [],
   "specUrl": ""
  },

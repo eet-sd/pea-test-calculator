@@ -94,6 +94,7 @@
   tr.excluded td:not(.excl) { opacity: .45; }
   tr.excluded td:nth-child(2) { text-decoration: line-through; }
   .special { font-size: .8rem; color: var(--accent); }
+  .subtest { color: var(--muted); font-size: .82rem; padding-left: .9em; }
   .notes { margin: 14px 0 0; padding: 0 0 0 1.2em; color: var(--muted); font-size: .9rem; }
   .notes li { margin-bottom: 3px; }
   footer { margin-top: 28px; color: var(--muted); font-size: .82rem; text-align: right; }
@@ -343,7 +344,8 @@
         rows += "<tr" + (excluded ? ' class="excluded"' : "") +
                 '><td class="excl"><button type="button" class="excl-btn' + (excluded ? " on" : "") + '" data-idx="' + i +
                 '" title="' + (excluded ? "นำหัวข้อนี้กลับมาคิดราคารวม" : "ตัดหัวข้อนี้ออกจากราคารวม") + '">✕</button></td>' +
-                "<td>" + esc(t.name) + (pc.special ? ' <span class="special">★' + (pc.badge ? " " + esc(pc.badge) : "") + "</span>" : "") + "</td>" +
+                "<td>" + esc(t.name) + (pc.special ? ' <span class="special">★' + (pc.badge ? " " + esc(pc.badge) : "") + "</span>" : "") +
+                (t.subItems ? t.subItems.map((s) => '<div class="subtest">- ' + esc(s) + "</div>").join("") : "") + "</td>" +
                 '<td class="num">' + countCell + "</td>" +
                 '<td class="num">' + fmt(t.price || 0) + "</td>" +
                 '<td class="num">' + (excluded ? "-" : fmt(line)) + "</td></tr>";

@@ -96,6 +96,10 @@ def parse_sampling(text, warnings, code):
         return {"type": "e1e2", "tiers": tiers}
 
     # generic "range : n" clauses
+    # "2 000" -> "2000" (space as thousands separator), "สุ่ม 32" -> ": 32"
+    # so tier tables like "<= 1,200 สุ่ม 32" and "N ≤ 300 : 5" join this path
+    t = re.sub(r"(?<=\d) (?=\d{3}\b)", "", t)
+    t = re.sub(r"สุ่ม\s*(\d+)", r": \1", t)
     tiers = []
     for m in re.finditer(r"([^:]+?)\s*:\s*(\d+)", t):
         desc, n = m.group(1).strip(), int(m.group(2))
@@ -103,8 +107,15 @@ def parse_sampling(text, warnings, code):
         d = desc.lower()
         r = None
         m2 = re.search(r"(\d+)\s*(?:ถึง|to|–|-)\s*(\d+)\s*$", d)
+        m3 = re.search(r"(\d+)\s*\\?<\s*n\s*(?:≤|\\?<=)\s*(\d+)\s*$", d)
         if m2:
             r = [int(m2.group(1)), int(m2.group(2))]
+        elif m3:
+            r = [int(m3.group(1)) + 1, int(m3.group(2))]
+        elif re.search(r"(?:≤|\\?<=)\s*(\d+)\s*$", d):
+            r = [1, int(re.search(r"(\d+)\s*$", d).group(1))]
+        elif re.search(r"(?:≥|\\?>=)\s*(\d+)\s*$", d):
+            r = [int(re.search(r"(\d+)\s*$", d).group(1)), None]
         elif re.search(r"(?:up\s+to|not\s+more\s+than|no\s+more\s+than|ไม่เกิน|not\s+exceeding)\s*(\d+)\s*$", d):
             r = [1, int(re.search(r"(\d+)\s*$", d).group(1))]
         elif re.search(r"(?:under|less\s+than|\\?<)\s*(\d+)\s*$", d):
@@ -152,6 +163,30 @@ def sampling_for_qty(rule, qty):
     return None
 
 
+def parse_numbered_tests(cell, warnings, code):
+    """Cells laid out as numbered lines "1.Topic (price)" where "- xxx" lines are
+    sub-items of the numbered topic above them (price already included there)."""
+    tests = []
+    for line in cell.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        m_sub = re.match(r"^\\?-\s*(.+)$", line)
+        if m_sub:
+            if tests:
+                tests[-1].setdefault("subItems", []).append(unescape_md(m_sub.group(1)))
+            else:
+                warnings.append(f"{code}: sub-item before any numbered test: {line!r}")
+            continue
+        item = unescape_md(line)
+        m = TEST_RE.match(item)
+        if m:
+            tests.append({"name": m.group(1).strip().rstrip(","), "price": int(m.group(2).replace(",", ""))})
+        elif item:
+            warnings.append(f"{code}: test item without price: {item!r}")
+    return tests
+
+
 def parse_tests(cell, warnings, code):
     cell = cell.strip()
     per_sample = None
@@ -159,13 +194,16 @@ def parse_tests(cell, warnings, code):
     if m:
         per_sample = int(float(m.group(1).replace(",", "")))
         cell = cell[m.end():]
-    tests = []
-    for item in split_dash_items(cell):
-        m = TEST_RE.match(item)
-        if m:
-            tests.append({"name": m.group(1).strip().rstrip(","), "price": int(m.group(2).replace(",", ""))})
-        elif item:
-            warnings.append(f"{code}: test item without price: {item!r}")
+    if re.search(r"(?m)^\s*\d+\s*\.", cell):
+        tests = parse_numbered_tests(cell, warnings, code)
+    else:
+        tests = []
+        for item in split_dash_items(cell):
+            m = TEST_RE.match(item)
+            if m:
+                tests.append({"name": m.group(1).strip().rstrip(","), "price": int(m.group(2).replace(",", ""))})
+            elif item:
+                warnings.append(f"{code}: test item without price: {item!r}")
     s = sum(t["price"] for t in tests)
     if per_sample is not None and s != per_sample:
         warnings.append(f"{code}: test prices sum {s} != ค่าทดสอบตัวอย่างละ {per_sample}")
