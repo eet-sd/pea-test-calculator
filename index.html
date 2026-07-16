@@ -84,11 +84,18 @@
   td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
   .table-scroll { overflow-x: auto; }
   tfoot td { font-weight: 800; border-bottom: 0; border-top: 2px solid var(--ink); }
+  td.excl { width: 34px; padding-right: 0; }
+  .excl-btn {
+    width: 26px; height: 26px; border: 1.5px solid var(--line); border-radius: 7px;
+    background: none; color: var(--muted); cursor: pointer; font-size: .85rem; line-height: 1;
+  }
+  .excl-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .excl-btn.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  tr.excluded td:not(.excl) { opacity: .45; }
+  tr.excluded td:nth-child(2) { text-decoration: line-through; }
   .special { font-size: .8rem; color: var(--accent); }
   .notes { margin: 14px 0 0; padding: 0 0 0 1.2em; color: var(--muted); font-size: .9rem; }
   .notes li { margin-bottom: 3px; }
-  .inst { margin-top: 14px; font-size: .9rem; }
-  .inst span { color: var(--muted); }
   footer { margin-top: 28px; color: var(--muted); font-size: .82rem; text-align: right; }
   footer a { color: var(--accent); }
 </style>
@@ -109,8 +116,8 @@
     </div>
     <div class="row">
       <div>
-        <label for="qty">จำนวนที่ซื้อ / ส่งมอบต่องวด <span class="hint" id="unitHint">(ตัว)</span></label>
-        <input type="number" id="qty" min="1" step="1" placeholder="เช่น 500">
+        <label for="qty">จำนวนที่ซื้อ / ส่งมอบต่องวด <span class="hint" id="unitHint">(ตัว) เช่น 500</span></label>
+        <input type="number" id="qty" min="1" step="1" placeholder="ใส่จำนวนที่ซื้อ / ส่งมอบต่องวด...">
       </div>
     </div>
   </div>
@@ -185,6 +192,7 @@
   const q = $("q"), suggest = $("suggest"), qtyEl = $("qty"), result = $("result"), clearBtn = $("clearBtn");
   let selected = null;       // chosen material
   let manualSamples = null;  // user-overridden sample count
+  let excludedTests = new Set(); // test indices excluded from the grand total
   let activeIdx = -1;
 
   function matches(term) {
@@ -200,7 +208,7 @@
     suggest.innerHTML = "";
     activeIdx = -1;
     if (!items.length) {
-      suggest.innerHTML = '<div class="none">ไม่พบพัสดุที่ตรงกับคำค้น</div>';
+      suggest.innerHTML = '<div class="none">ไม่พบพัสดุที่ตรงกับคำค้น — ให้ตรวจสอบอัตราค่าทดสอบโดยประมาณ จาก "อัตราค่าบริการทดสอบอุปกรณ์โดยกองทดสอบอุปกรณ์ไฟฟ้า"</div>';
     } else {
       items.forEach((m) => {
         const b = document.createElement("button");
@@ -218,6 +226,7 @@
   function pick(m) {
     selected = m;
     manualSamples = null;
+    excludedTests.clear();
     q.value = m.code + "  " + m.name;
     suggest.hidden = true;
     clearBtn.hidden = false;
@@ -229,6 +238,7 @@
     q.value = "";
     selected = null;
     manualSamples = null;
+    excludedTests.clear();
     suggest.hidden = true;
     clearBtn.hidden = true;
     render();
@@ -238,6 +248,7 @@
   q.addEventListener("input", () => {
     selected = null;
     manualSamples = null;
+    excludedTests.clear();
     clearBtn.hidden = q.value.trim() === "";
     const term = q.value.trim();
     if (term.length < 2) { suggest.hidden = true; render(); return; }
@@ -281,13 +292,11 @@
     let html = '<p class="mat-head">รหัสพัสดุ <span class="code">' + m.code + "</span> " + esc(m.name);
     if (qty >= 1) html += " — ซื้อจำนวน " + fmt(qty) + " ตัว";
     html += "</p>";
-    let subParts = ['ค่าทดสอบต่อ 1 ตัวอย่าง: ' + fmt(m.perSample || 0) + " บาท"];
     if (m.spec) {
-      subParts.push("สเปค: " + (m.specUrl
+      html += '<p class="sub">สเปค: ' + (m.specUrl
         ? '<a href="' + esc(m.specUrl) + '" target="_blank" rel="noopener">' + esc(m.spec) + "</a>"
-        : esc(m.spec)));
+        : esc(m.spec)) + "</p>";
     }
-    html += '<p class="sub">' + subParts.join(" · ") + "</p>";
 
     if (!(qty >= 1)) {
       html += '<div class="banner">กรอก "จำนวนที่ซื้อ / ส่งมอบต่องวด" เพื่อคำนวณจำนวนสุ่มและค่าทดสอบ</div>';
@@ -304,53 +313,60 @@
     if (samples !== null && samples > qty) { samples = qty; clamped = true; }
     if (manualSamples !== null) samples = manualSamples;
 
-    const srcInfo = m.samplingSource ? " (ที่มา: " + esc(m.samplingSource) + ")" : "";
-    const ruleInfo = 'จำนวนสุ่ม:\n' + esc(m.samplingText || "-");
+    const srcInfo = m.samplingSource
+      ? '<span class="rule-src">(ที่มา: ' + esc(m.samplingSource) + ")</span>" : "";
     if (manualMode) {
       if (manualSamples === null) {
         html += '<div class="banner">⚠ ชีตระบุจำนวนสุ่มของรหัสนี้เป็น "' + esc(m.samplingText || "ไม่กำหนด") +
                 '" — กรอกจำนวนสุ่มเองด้านล่างเพื่อคำนวณค่าทดสอบ</div>';
       }
       html += '<div class="sample-line">จำนวนสุ่มทดสอบ <input type="text" inputmode="numeric" id="sampleEdit" placeholder="?" value="' +
-              (manualSamples !== null ? manualSamples : "") + '"> ตัวอย่าง' + srcInfo +
-              '<span class="rule-src">' + ruleInfo + "</span></div>";
+              (manualSamples !== null ? manualSamples : "") + '"> ตัวอย่าง' + srcInfo + "</div>";
     } else {
       const e1e2 = !clamped && computed && computed.e1 !== undefined
         ? " (E1: " + computed.e1 + " + E2: " + computed.e2 + ")" : "";
       const clampNote = clamped
         ? " (ปรับลดเท่าจำนวนที่ซื้อ — ตารางกำหนด " + fmt(computed.n) + ")" : "";
-      html += '<div class="sample-line">จำนวนสุ่มทดสอบ <span class="n">' + fmt(samples) + "</span> ตัวอย่าง" + e1e2 + clampNote + srcInfo +
-              '<span class="rule-src">' + ruleInfo + "</span></div>";
+      html += '<div class="sample-line">จำนวนสุ่มทดสอบ <span class="n">' + fmt(samples) + "</span> ตัวอย่าง" + e1e2 + clampNote + srcInfo + "</div>";
     }
 
     if (samples !== null) {
       let grand = 0;
       let rows = "";
-      for (const t of m.tests) {
+      m.tests.forEach((t, i) => {
+        const excluded = excludedTests.has(i);
         const pc = perTestCount(m, t.name, samples);
         const line = (t.price || 0) * pc.count;
-        grand += line;
-        const countCell = pc.count === 0 ? "ไม่ทดสอบ" : fmt(pc.count) + (pc.unit ? " " + pc.unit : "");
-        rows += "<tr><td>" + esc(t.name) + (pc.special ? ' <span class="special">★' + (pc.badge ? " " + esc(pc.badge) : "") + "</span>" : "") + "</td>" +
+        if (!excluded) grand += line;
+        const countCell = excluded ? "-"
+          : (pc.count === 0 ? "ไม่ทดสอบ" : fmt(pc.count) + (pc.unit ? " " + pc.unit : ""));
+        rows += "<tr" + (excluded ? ' class="excluded"' : "") +
+                '><td class="excl"><button type="button" class="excl-btn' + (excluded ? " on" : "") + '" data-idx="' + i +
+                '" title="' + (excluded ? "นำหัวข้อนี้กลับมาคิดราคารวม" : "ตัดหัวข้อนี้ออกจากราคารวม") + '">✕</button></td>' +
+                "<td>" + esc(t.name) + (pc.special ? ' <span class="special">★' + (pc.badge ? " " + esc(pc.badge) : "") + "</span>" : "") + "</td>" +
                 '<td class="num">' + countCell + "</td>" +
                 '<td class="num">' + fmt(t.price || 0) + "</td>" +
-                '<td class="num">' + fmt(line) + "</td></tr>";
-      }
-      html += '<div class="table-scroll"><table><thead><tr><th>หัวข้อทดสอบ</th><th class="num">จำนวนตัวอย่าง</th><th class="num">ราคา/ตัวอย่าง (บาท)</th><th class="num">รวม (บาท)</th></tr></thead>' +
+                '<td class="num">' + (excluded ? "-" : fmt(line)) + "</td></tr>";
+      });
+      html += '<div class="table-scroll"><table><thead><tr><th></th><th>หัวข้อทดสอบ</th><th class="num">จำนวนตัวอย่าง</th><th class="num">ราคา/ตัวอย่าง (บาท)</th><th class="num">รวม (บาท)</th></tr></thead>' +
               "<tbody>" + rows + "</tbody>" +
-              '<tfoot><tr><td colspan="3">รวมค่าทดสอบโดยประมาณ</td><td class="num">' + fmt(grand) + "</td></tr></tfoot></table></div>";
+              '<tfoot><tr><td colspan="4">รวมค่าทดสอบโดยประมาณ</td><td class="num">' + fmt(grand) + "</td></tr></tfoot></table></div>";
       const special = SPECIAL.byCode[m.code];
       if (special && special.ref) {
         html += '<ul class="notes"><li>' + esc(special.ref) + "</li></ul>";
       }
     }
 
-    if (m.institute && m.institute.length) {
-      html += '<p class="inst"><span>สถาบันทดสอบ:</span> ' + m.institute.map(esc).join(" · ") + "</p>";
-    }
-
     card.innerHTML = html;
     result.appendChild(card);
+
+    card.querySelectorAll(".excl-btn").forEach((b) => {
+      b.addEventListener("click", () => {
+        const i = parseInt(b.dataset.idx, 10);
+        if (excludedTests.has(i)) excludedTests.delete(i); else excludedTests.add(i);
+        render();
+      });
+    });
 
     const se = card.querySelector("#sampleEdit");
     if (se) {
