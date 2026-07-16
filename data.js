@@ -5554,33 +5554,29 @@ window.MATERIALS = [
   "code": "1030020100",
   "name": "COMP. INS.,SUSPENSION,1.1-1.2 M.,110 KN.",
   "spec": "RINS-003/2561",
-  "samplingText": "N ≤ 300   E1: 3   E2: 2  \n 300 < N ≤ 2 000  E1: 4   E2: 3 \n 2 000 < N ≤ 5 000  E1:8  E2:4 \n 5 000 < N ≤ 10 000  E1:12 E2:6",
+  "samplingText": "N ≤ 300   : 5  \n 300 < N ≤ 2 000 : 7 \n 2 000 < N ≤ 5 000  : 12 \n 5 000 < N ≤ 10 000  : 18",
   "sampling": {
-   "type": "e1e2",
+   "type": "tiers",
    "tiers": [
     [
-     1,
+     0,
+     0,
+     7
+    ],
+    [
+     0,
+     0,
+     12
+    ],
+    [
+     0,
+     299,
+     18
+    ],
+    [
      300,
-     3,
-     2
-    ],
-    [
-     301,
-     2000,
-     4,
-     3
-    ],
-    [
-     2001,
-     5000,
-     8,
-     4
-    ],
-    [
-     5001,
-     null,
-     12,
-     6
+     300,
+     5
     ]
    ]
   },
@@ -5614,33 +5610,29 @@ window.MATERIALS = [
   "code": "1030020101",
   "name": "COMP. INS.,SUSPENSION,1.5-1.6 M.,110 KN.",
   "spec": "RINS-003/2561",
-  "samplingText": "N ≤ 300   E1: 3   E2: 2  \n 300 < N ≤ 2 000  E1: 4   E2: 3 \n 2 000 < N ≤ 5 000  E1:8  E2:4 \n 5 000 < N ≤ 10 000  E1:12 E2:6",
+  "samplingText": "N ≤ 300   : 5  \n 300 < N ≤ 2 000 : 7 \n 2 000 < N ≤ 5 000  : 12 \n 5 000 < N ≤ 10 000  : 18",
   "sampling": {
-   "type": "e1e2",
+   "type": "tiers",
    "tiers": [
     [
-     1,
+     0,
+     0,
+     7
+    ],
+    [
+     0,
+     0,
+     12
+    ],
+    [
+     0,
+     299,
+     18
+    ],
+    [
      300,
-     3,
-     2
-    ],
-    [
-     301,
-     2000,
-     4,
-     3
-    ],
-    [
-     2001,
-     5000,
-     8,
-     4
-    ],
-    [
-     5001,
-     null,
-     12,
-     6
+     300,
+     5
     ]
    ]
   },
@@ -5674,33 +5666,29 @@ window.MATERIALS = [
   "code": "1030020103",
   "name": "COMP. INS.,SUSPENSION,1.5-1.6 M.,220 KN.",
   "spec": "RINS-003/2561",
-  "samplingText": "N ≤ 300   E1: 3   E2: 2  \n 300 < N ≤ 2 000  E1: 4   E2: 3 \n 2 000 < N ≤ 5 000  E1:8  E2:4 \n 5 000 < N ≤ 10 000  E1:12 E2:6",
+  "samplingText": "N ≤ 300   : 5  \n 300 < N ≤ 2 000 : 7 \n 2 000 < N ≤ 5 000  : 12 \n 5 000 < N ≤ 10 000  : 18",
   "sampling": {
-   "type": "e1e2",
+   "type": "tiers",
    "tiers": [
     [
-     1,
+     0,
+     0,
+     7
+    ],
+    [
+     0,
+     0,
+     12
+    ],
+    [
+     0,
+     299,
+     18
+    ],
+    [
      300,
-     3,
-     2
-    ],
-    [
-     301,
-     2000,
-     4,
-     3
-    ],
-    [
-     2001,
-     5000,
-     8,
-     4
-    ],
-    [
-     5001,
-     null,
-     12,
-     6
+     300,
+     5
     ]
    ]
   },
@@ -10434,6 +10422,356 @@ window.MATERIALS = [
    "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)"
   ],
   "specUrl": "https://drive.google.com/file/d/1T25RtRR-9IFM3melCidt7Z1B47YQGei0/"
+ },
+ {
+  "code": "1060070518",
+  "name": "METER.AMR3P3W110V5A (FUNC)",
+  "spec": "TOR",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "คณะกรรมการกำหนด",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070519",
+  "name": "METER.AMR3P4W 63.5/110V 5A (FUNC)",
+  "spec": "TOR",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "คณะกรรมการกำหนด",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070520",
+  "name": "METER.AMR 3P4W 220/380V 5A (FUNC)",
+  "spec": "TOR",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "คณะกรรมการกำหนด",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070700",
+  "name": "METER SMART 1P 2W 230V 5(45)A PLC",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070701",
+  "name": "METER SMART 1P 2W 230V 5(45)A RF",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070702",
+  "name": "METER SMART 1P 2W 230V 5(45)A GPRS",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070703",
+  "name": "METER SMART 1P 2W 230V 5(100)A PLC",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070704",
+  "name": "METER SMART 1P 2W 230V 5(100)A RF",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070705",
+  "name": "METER SMART 1P 2W 230V 5(100)A GPRS",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070706",
+  "name": "METER SMART 3P 4W 230/400V 5(45)A PLC",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070707",
+  "name": "METER SMART 3P 4W 230/400V 5(45)A RF",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070708",
+  "name": "METER SMART 3P 4W 230/400V 5(45)A GPRS",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070709",
+  "name": "METER SMART 3P 4W 230/400V 5(100)A PLC",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070710",
+  "name": "METER SMART 3P 4W 230/400V 5(100)A RF",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070711",
+  "name": "METER SMART 3P 4W 230/400V 5(100)A GPRS",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070712",
+  "name": "METER SMART 3P 4W 230/400V 5(6)A RF",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070713",
+  "name": "METER SMART 3P 4W 230/400V 5(6)A GPRS",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070714",
+  "name": "METER SMART 3P 4W 66.4/115V 5(6)A RF",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070715",
+  "name": "METER SMART 3P 4W 66.4/115V 5(6)A GPRS",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070716",
+  "name": "METER SMART 3P 3W 3x110V 5(6)A RF",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070717",
+  "name": "METER SMART 3P 3W 3x110V 5(6)A GPRS",
+  "spec": "RMTR-033/2560",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070800",
+  "name": "METER AMI 3P3W 110V5A C&I CUSTOMER",
+  "spec": "RMTR-042/2568",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070801",
+  "name": "METER AMI 3P4W 66.4/115V5A C&I CUSTOMER",
+  "spec": "RMTR-042/2568",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070802",
+  "name": "METER AMI 3P4W 230/400V5A C&I CUSTOMER",
+  "spec": "RMTR-042/2568",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
+ },
+ {
+  "code": "1060070803",
+  "name": "METER AMI 3P3W 63.5/110V5A C&I CUSTOMER",
+  "spec": "RMTR-042/2568",
+  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "sampling": {
+   "type": "none"
+  },
+  "samplingSource": "สเปค",
+  "tests": [],
+  "perSample": 0,
+  "institute": [],
+  "specUrl": ""
  },
  {
   "code": "1060100000",
