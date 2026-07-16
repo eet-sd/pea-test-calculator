@@ -178,7 +178,7 @@ def parse_numbered_tests(cell, warnings, code):
             else:
                 warnings.append(f"{code}: sub-item before any numbered test: {line!r}")
             continue
-        item = unescape_md(line)
+        item = unescape_md(re.sub(r"^\d+\s*\.\s*", "", line))
         m = TEST_RE.match(item)
         if m:
             tests.append({"name": m.group(1).strip().rstrip(","), "price": int(m.group(2).replace(",", ""))})

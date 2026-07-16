@@ -10451,19 +10451,19 @@ window.MATERIALS = [
   "samplingSource": "คณะกรรมการกำหนด",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.01In, p.f.1.0 Balanced phase",
@@ -10474,7 +10474,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -10510,19 +10510,19 @@ window.MATERIALS = [
   "samplingSource": "คณะกรรมการกำหนด",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.01In, p.f.1.0 Balanced phase",
@@ -10533,7 +10533,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -10569,19 +10569,19 @@ window.MATERIALS = [
   "samplingSource": "คณะกรรมการกำหนด",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.01In, p.f.1.0 Balanced phase",
@@ -10592,7 +10592,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -10628,19 +10628,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.05Ib, p.f.1.0 Balanced phase",
@@ -10650,7 +10650,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -10686,19 +10686,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.05Ib, p.f.1.0 Balanced phase",
@@ -10708,7 +10708,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -10744,19 +10744,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.05Ib, p.f.1.0 Balanced phase",
@@ -10766,7 +10766,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -10802,19 +10802,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.05Ib, p.f.1.0 Balanced phase",
@@ -10824,7 +10824,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -10860,19 +10860,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.05Ib, p.f.1.0 Balanced phase",
@@ -10882,7 +10882,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -10918,19 +10918,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.05Ib, p.f.1.0 Balanced phase",
@@ -10940,7 +10940,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -10976,19 +10976,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.05Ib, p.f.1.0 Balanced phase",
@@ -10999,7 +10999,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11035,19 +11035,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.05Ib, p.f.1.0 Balanced phase",
@@ -11058,7 +11058,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11094,19 +11094,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.05Ib, p.f.1.0 Balanced phase",
@@ -11117,7 +11117,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11153,19 +11153,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.05Ib, p.f.1.0 Balanced phase",
@@ -11176,7 +11176,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11212,19 +11212,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.05Ib, p.f.1.0 Balanced phase",
@@ -11235,7 +11235,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11271,19 +11271,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.05Ib, p.f.1.0 Balanced phase",
@@ -11294,7 +11294,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11330,19 +11330,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.01In, p.f.1.0 Balanced phase",
@@ -11353,7 +11353,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11389,19 +11389,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.01In, p.f.1.0 Balanced phase",
@@ -11412,7 +11412,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11448,19 +11448,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.01In, p.f.1.0 Balanced phase",
@@ -11471,7 +11471,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11507,19 +11507,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.01In, p.f.1.0 Balanced phase",
@@ -11530,7 +11530,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11566,19 +11566,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.01In, p.f.1.0 Balanced phase",
@@ -11589,7 +11589,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11625,19 +11625,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.01In, p.f.1.0 Balanced phase",
@@ -11648,7 +11648,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11684,19 +11684,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.01In, p.f.1.0 Balanced phase",
@@ -11707,7 +11707,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11743,19 +11743,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.01In, p.f.1.0 Balanced phase",
@@ -11766,7 +11766,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11802,19 +11802,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.01In, p.f.1.0 Balanced phase",
@@ -11825,7 +11825,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
@@ -11861,19 +11861,19 @@ window.MATERIALS = [
   "samplingSource": "สเปค",
   "tests": [
    {
-    "name": "1.AC voltage test",
+    "name": "AC voltage test",
     "price": 340
    },
    {
-    "name": "2.Test of no-load condition",
+    "name": "Test of no-load condition",
     "price": 240
    },
    {
-    "name": "3.Starting",
+    "name": "Starting",
     "price": 240
    },
    {
-    "name": "4.Accuracy Tests",
+    "name": "Accuracy Tests",
     "price": 240,
     "subItems": [
      "0.01In, p.f.1.0 Balanced phase",
@@ -11884,7 +11884,7 @@ window.MATERIALS = [
     ]
    },
    {
-    "name": "5.Verification of the register",
+    "name": "Verification of the register",
     "price": 250
    }
   ],
