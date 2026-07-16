@@ -12154,7 +12154,7 @@ window.MATERIALS = [
  {
   "code": "1060070518",
   "name": "METER.AMR3P3W110V5A (FUNC)",
-  "spec": "TOR",
+  "spec": "RMTR-018/2548",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "tiers",
@@ -12213,7 +12213,7 @@ window.MATERIALS = [
  {
   "code": "1060070519",
   "name": "METER.AMR3P4W 63.5/110V 5A (FUNC)",
-  "spec": "TOR",
+  "spec": "RMTR-018/2548",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "tiers",
@@ -12272,7 +12272,7 @@ window.MATERIALS = [
  {
   "code": "1060070520",
   "name": "METER.AMR 3P4W 220/380V 5A (FUNC)",
-  "spec": "TOR",
+  "spec": "RMTR-018/2548",
   "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "tiers",
