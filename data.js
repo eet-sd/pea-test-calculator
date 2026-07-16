@@ -10427,7 +10427,7 @@ window.MATERIALS = [
   "code": "1060070518",
   "name": "METER.AMR3P3W110V5A (FUNC)",
   "spec": "TOR",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10441,7 +10441,7 @@ window.MATERIALS = [
   "code": "1060070519",
   "name": "METER.AMR3P4W 63.5/110V 5A (FUNC)",
   "spec": "TOR",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10455,7 +10455,7 @@ window.MATERIALS = [
   "code": "1060070520",
   "name": "METER.AMR 3P4W 220/380V 5A (FUNC)",
   "spec": "TOR",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10469,7 +10469,7 @@ window.MATERIALS = [
   "code": "1060070700",
   "name": "METER SMART 1P 2W 230V 5(45)A PLC",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10483,7 +10483,7 @@ window.MATERIALS = [
   "code": "1060070701",
   "name": "METER SMART 1P 2W 230V 5(45)A RF",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10497,7 +10497,7 @@ window.MATERIALS = [
   "code": "1060070702",
   "name": "METER SMART 1P 2W 230V 5(45)A GPRS",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10511,7 +10511,7 @@ window.MATERIALS = [
   "code": "1060070703",
   "name": "METER SMART 1P 2W 230V 5(100)A PLC",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10525,7 +10525,7 @@ window.MATERIALS = [
   "code": "1060070704",
   "name": "METER SMART 1P 2W 230V 5(100)A RF",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10539,7 +10539,7 @@ window.MATERIALS = [
   "code": "1060070705",
   "name": "METER SMART 1P 2W 230V 5(100)A GPRS",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10553,7 +10553,7 @@ window.MATERIALS = [
   "code": "1060070706",
   "name": "METER SMART 3P 4W 230/400V 5(45)A PLC",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10567,7 +10567,7 @@ window.MATERIALS = [
   "code": "1060070707",
   "name": "METER SMART 3P 4W 230/400V 5(45)A RF",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10581,7 +10581,7 @@ window.MATERIALS = [
   "code": "1060070708",
   "name": "METER SMART 3P 4W 230/400V 5(45)A GPRS",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10595,7 +10595,7 @@ window.MATERIALS = [
   "code": "1060070709",
   "name": "METER SMART 3P 4W 230/400V 5(100)A PLC",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10609,7 +10609,7 @@ window.MATERIALS = [
   "code": "1060070710",
   "name": "METER SMART 3P 4W 230/400V 5(100)A RF",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10623,7 +10623,7 @@ window.MATERIALS = [
   "code": "1060070711",
   "name": "METER SMART 3P 4W 230/400V 5(100)A GPRS",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10637,7 +10637,7 @@ window.MATERIALS = [
   "code": "1060070712",
   "name": "METER SMART 3P 4W 230/400V 5(6)A RF",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10651,7 +10651,7 @@ window.MATERIALS = [
   "code": "1060070713",
   "name": "METER SMART 3P 4W 230/400V 5(6)A GPRS",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10665,7 +10665,7 @@ window.MATERIALS = [
   "code": "1060070714",
   "name": "METER SMART 3P 4W 66.4/115V 5(6)A RF",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10679,7 +10679,7 @@ window.MATERIALS = [
   "code": "1060070715",
   "name": "METER SMART 3P 4W 66.4/115V 5(6)A GPRS",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10693,7 +10693,7 @@ window.MATERIALS = [
   "code": "1060070716",
   "name": "METER SMART 3P 3W 3x110V 5(6)A RF",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10707,7 +10707,7 @@ window.MATERIALS = [
   "code": "1060070717",
   "name": "METER SMART 3P 3W 3x110V 5(6)A GPRS",
   "spec": "RMTR-033/2560",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10721,7 +10721,7 @@ window.MATERIALS = [
   "code": "1060070800",
   "name": "METER AMI 3P3W 110V5A C&I CUSTOMER",
   "spec": "RMTR-042/2568",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10735,7 +10735,7 @@ window.MATERIALS = [
   "code": "1060070801",
   "name": "METER AMI 3P4W 66.4/115V5A C&I CUSTOMER",
   "spec": "RMTR-042/2568",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10749,7 +10749,7 @@ window.MATERIALS = [
   "code": "1060070802",
   "name": "METER AMI 3P4W 230/400V5A C&I CUSTOMER",
   "spec": "RMTR-042/2568",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
@@ -10763,7 +10763,7 @@ window.MATERIALS = [
   "code": "1060070803",
   "name": "METER AMI 3P3W 63.5/110V5A C&I CUSTOMER",
   "spec": "RMTR-042/2568",
-  "samplingText": "ส่งมอบ <= 1,200 สุ่ม 32\nส่งมอบ 1,201 - 3,200 สุ่ม 50\nส่งมอบ >= 3,201 สุ่ม 80",
+  "samplingText": "<= 1,200 สุ่ม 32\n1,201 - 3,200 สุ่ม 50\n>= 3,201 สุ่ม 80",
   "sampling": {
    "type": "none"
   },
