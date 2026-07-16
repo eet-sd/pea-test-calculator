@@ -95,6 +95,7 @@
   tr.excluded td:nth-child(2) { text-decoration: line-through; }
   .special { font-size: .8rem; color: var(--accent); }
   .subtest { color: var(--muted); font-size: .82rem; padding-left: .9em; }
+  .test-count { width: 64px; padding: 4px 8px; text-align: right; font-weight: 700; }
   .notes { margin: 14px 0 0; padding: 0 0 0 1.2em; color: var(--muted); font-size: .9rem; }
   .notes li { margin-bottom: 3px; }
   footer { margin-top: 28px; color: var(--muted); font-size: .82rem; text-align: right; }
@@ -194,6 +195,7 @@
   let selected = null;       // chosen material
   let manualSamples = null;  // user-overridden sample count
   let excludedTests = new Set(); // test indices excluded from the grand total
+  let manualTestCounts = {}; // per-test sample counts (โหมด "ตามที่ตกลง")
   let activeIdx = -1;
 
   function matches(term) {
@@ -228,6 +230,7 @@
     selected = m;
     manualSamples = null;
     excludedTests.clear();
+    manualTestCounts = {};
     q.value = m.code + "  " + m.name;
     suggest.hidden = true;
     clearBtn.hidden = false;
@@ -240,6 +243,7 @@
     selected = null;
     manualSamples = null;
     excludedTests.clear();
+    manualTestCounts = {};
     suggest.hidden = true;
     clearBtn.hidden = true;
     render();
@@ -250,6 +254,7 @@
     selected = null;
     manualSamples = null;
     excludedTests.clear();
+    manualTestCounts = {};
     clearBtn.hidden = q.value.trim() === "";
     const term = q.value.trim();
     if (term.length < 2) { suggest.hidden = true; render(); return; }
@@ -306,8 +311,12 @@
       return;
     }
 
+    const special = SPECIAL.byCode[m.code];
+    // ซื้อต่ำกว่าเกณฑ์ = "ตามที่ตกลง" → กรอกจำนวนตัวอย่างรายหัวข้อเองในตาราง
+    const agreedMode = !!(special && special.manualPerTestBelowQty && qty < special.manualPerTestBelowQty);
+
     const computed = computeSamples(m.sampling, qty);
-    const manualMode = computed === null;
+    const manualMode = !agreedMode && computed === null;
     let samples = computed ? computed.n : null;
     // จำนวนสุ่มเกินจำนวนที่ซื้อไม่ได้ — ตารางสุ่มหลายรายการกำหนดขั้นต่ำสูงกว่าล็อตเล็กๆ
     let clamped = false;
@@ -316,7 +325,9 @@
 
     const srcInfo = m.samplingSource
       ? '<span class="rule-src">(ที่มา: ' + esc(m.samplingSource) + ")</span>" : "";
-    if (manualMode) {
+    if (agreedMode) {
+      html += '<div class="sample-line">จำนวนสุ่มทดสอบ <span class="n">ตามที่ตกลง</span> — กรอกจำนวนตัวอย่างรายหัวข้อในตาราง (ไม่เกินจำนวนที่ซื้อ)' + srcInfo + "</div>";
+    } else if (manualMode) {
       if (manualSamples === null) {
         html += '<div class="banner">⚠ ชีตระบุจำนวนสุ่มของรหัสนี้เป็น "' + esc(m.samplingText || "ไม่กำหนด") +
                 '" — กรอกจำนวนสุ่มเองด้านล่างเพื่อคำนวณค่าทดสอบ</div>';
@@ -331,16 +342,27 @@
       html += '<div class="sample-line">จำนวนสุ่มทดสอบ <span class="n">' + fmt(samples) + "</span> ตัวอย่าง" + e1e2 + clampNote + srcInfo + "</div>";
     }
 
-    if (samples !== null) {
+    if (samples !== null || agreedMode) {
       let grand = 0;
       let rows = "";
       m.tests.forEach((t, i) => {
         const excluded = excludedTests.has(i);
-        const pc = perTestCount(m, t.name, samples);
-        const line = (t.price || 0) * pc.count;
+        let pc, line, countCell, lineCell;
+        if (agreedMode) {
+          const mc = Math.min(manualTestCounts[i] || 0, qty);
+          pc = { count: mc, special: false };
+          line = (t.price || 0) * mc;
+          countCell = excluded ? "-"
+            : '<input type="text" inputmode="numeric" class="test-count" data-idx="' + i + '" placeholder="?" value="' + (mc || "") + '">';
+          lineCell = excluded || !mc ? "-" : fmt(line);
+        } else {
+          pc = perTestCount(m, t.name, samples);
+          line = (t.price || 0) * pc.count;
+          countCell = excluded ? "-"
+            : (pc.count === 0 ? "ไม่ทดสอบ" : fmt(pc.count) + (pc.unit ? " " + pc.unit : ""));
+          lineCell = excluded ? "-" : fmt(line);
+        }
         if (!excluded) grand += line;
-        const countCell = excluded ? "-"
-          : (pc.count === 0 ? "ไม่ทดสอบ" : fmt(pc.count) + (pc.unit ? " " + pc.unit : ""));
         rows += "<tr" + (excluded ? ' class="excluded"' : "") +
                 '><td class="excl"><button type="button" class="excl-btn' + (excluded ? " on" : "") + '" data-idx="' + i +
                 '" title="' + (excluded ? "นำหัวข้อนี้กลับมาคิดราคารวม" : "ตัดหัวข้อนี้ออกจากราคารวม") + '">✕</button></td>' +
@@ -348,12 +370,11 @@
                 (t.subItems ? t.subItems.map((s) => '<div class="subtest">- ' + esc(s) + "</div>").join("") : "") + "</td>" +
                 '<td class="num">' + countCell + "</td>" +
                 '<td class="num">' + fmt(t.price || 0) + "</td>" +
-                '<td class="num">' + (excluded ? "-" : fmt(line)) + "</td></tr>";
+                '<td class="num">' + lineCell + "</td></tr>";
       });
       html += '<div class="table-scroll"><table><thead><tr><th></th><th>หัวข้อทดสอบ</th><th class="num">จำนวนตัวอย่าง</th><th class="num">ราคา/ตัวอย่าง (บาท)</th><th class="num">รวม (บาท)</th></tr></thead>' +
               "<tbody>" + rows + "</tbody>" +
               '<tfoot><tr><td colspan="4">รวมค่าทดสอบโดยประมาณ</td><td class="num">' + fmt(grand) + "</td></tr></tfoot></table></div>";
-      const special = SPECIAL.byCode[m.code];
       if (special && special.ref) {
         html += '<ul class="notes"><li>' + esc(special.ref) + "</li></ul>";
       }
@@ -381,6 +402,20 @@
         if (se2) { se2.focus(); try { se2.setSelectionRange(pos, pos); } catch (_) {} }
       });
     }
+
+    card.querySelectorAll(".test-count").forEach((inp) => {
+      inp.addEventListener("input", () => {
+        const i = parseInt(inp.dataset.idx, 10);
+        const cap = parseInt(qtyEl.value, 10);
+        const v = parseInt(inp.value, 10);
+        if (v >= 1) manualTestCounts[i] = cap >= 1 ? Math.min(v, cap) : v;
+        else delete manualTestCounts[i];
+        const pos = inp.selectionStart;
+        render();
+        const again = result.querySelector('.test-count[data-idx="' + i + '"]');
+        if (again) { again.focus(); try { again.setSelectionRange(pos, pos); } catch (_) {} }
+      });
+    });
   }
 
   function esc(s) {

@@ -9,6 +9,7 @@
 //      perTestBySample: { "<จำนวนสุ่มรวม>": { "<ชื่อหัวข้อ>": จำนวน } }  (0 = ไม่ทดสอบ)
 //      fullTests: ["<ชื่อหัวข้อ>"]  → ยกเว้นจาก perTestAlways1 ทดสอบครบทุกตัวอย่าง
 //      pairTests: ["<ชื่อหัวข้อ>"]  → ทดสอบเป็นคู่ จำนวน = ปัดลง(จำนวนสุ่ม/2) ราคาคือราคาต่อคู่
+//      manualPerTestBelowQty: N  → ซื้อต่ำกว่า N ตัว = "ตามที่ตกลง" กรอกจำนวนรายหัวข้อเอง (ไม่เกินจำนวนที่ซื้อ)
 //      ref: ข้อความอ้างอิงแสดงใต้ตาราง
 
 window.SPECIAL_TEST_RULES = {
@@ -65,6 +66,21 @@ window.SPECIAL_TEST_RULES = {
   window.SPECIAL_TEST_RULES.byCode[code] = {
     ref: "ทดสอบเป็นคู่ โดยราคาดังกล่าว ไม่รวมค่าสายไฟฟ้าสำหรับทดสอบ Tensile strength",
     pairTests: ["Tensile strength without additional accessories"]
+  };
+});
+
+// COMPOSITE SUSPENSION INSULATOR (RINS-003/2561) 1030020100/101/103:
+// จำนวนตัวอย่างต่อหัวข้อตามจำนวนสุ่มรวม (5/7/12/18)
+// ซื้อต่ำกว่า 5 ตัว = "ตามที่ตกลง" → กรอกจำนวนรายหัวข้อเองในตาราง (ไม่เกินจำนวนที่ซื้อ)
+["1030020100", "1030020101", "1030020103"].forEach(function (code) {
+  window.SPECIAL_TEST_RULES.byCode[code] = {
+    manualPerTestBelowQty: 5,
+    perTestBySample: {
+      "5":  { "Dimension": 5,  "Leakage distance": 5,  "Tensile strength": 3,  "Coating thickness": 2 },
+      "7":  { "Dimension": 7,  "Leakage distance": 7,  "Tensile strength": 4,  "Coating thickness": 3 },
+      "12": { "Dimension": 12, "Leakage distance": 12, "Tensile strength": 8,  "Coating thickness": 4 },
+      "18": { "Dimension": 18, "Leakage distance": 18, "Tensile strength": 12, "Coating thickness": 6 }
+    }
   };
 });
 
