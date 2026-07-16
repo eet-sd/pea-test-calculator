@@ -73,6 +73,7 @@ window.SPECIAL_TEST_RULES = {
 // withstand / partial discharge / inter-turn ส่วนที่เหลือ (n-3) ทดสอบ
 // Tests for accuracy & Verification of markings
 // จำนวนต่องวด ≤ 25 (สุ่ม 1-3) → ทดสอบครบทุกหัวข้อทุกตัวอย่าง (default อยู่แล้ว)
+// ref แยก 3 กลุ่ม (L.V. CT / H.V. CT / H.V. VT) เพราะชื่อหัวข้อเต็มใน data.js ต่างกัน
 (function () {
   var split = {};
   [5, 8, 13, 20, 32].forEach(function (n) {
@@ -84,23 +85,46 @@ window.SPECIAL_TEST_RULES = {
       "Tests for accuracy": n - 3
     };
   });
-  [
-    // L.V. CT
-    "1060030000", "1060030001", "1060030002", "1060030003",
-    "1060030004", "1060030005", "1060030100",
-    // H.V. CT (ไม่เกิน 33 kV)
-    "1060040019", "1060040020", "1060040021", "1060040022", "1060040023",
-    "1060040024", "1060040025", "1060040026", "1060040027", "1060040028",
-    "1060040029", "1060040030", "1060040031", "1060040032", "1060040033",
-    "1060040112", "1060040113", "1060040114", "1060040115", "1060040116",
-    "1060040117", "1060040118", "1060040119", "1060040120", "1060040121",
-    "1060040122",
-    // H.V. VT (ไม่เกิน 33 kV)
-    "1060020007", "1060020105"
-  ].forEach(function (code) {
-    window.SPECIAL_TEST_RULES.byCode[code] = {
-      ref: "อ้างอิง: สเปคเลขที่ RMTR-021/2553 — กรณีจำนวนต่องวดเกิน 25 เครื่อง แยกตัวอย่าง 3 เครื่องทดสอบหัวข้อ withstand/PD/inter-turn ส่วนตัวอย่างที่เหลือทดสอบ Tests for accuracy & Verification of markings",
-      perTestBySample: split
-    };
+  var refHead = "อ้างอิง: สเปคเลขที่ RMTR-021/2553 — กรณีจำนวนต่องวดเกิน 25 เครื่อง แยกตัวอย่าง 3 เครื่อง ทดสอบหัวข้อ ";
+  var groups = [
+    {
+      // L.V. CT
+      codes: [
+        "1060030000", "1060030001", "1060030002", "1060030003",
+        "1060030004", "1060030005", "1060030100"
+      ],
+      ref: refHead + '"Power-frequency voltage withstand tests on secondary terminals ' +
+           'และ Inter-turn overvoltage test" และจำนวนตัวอย่างที่เหลือทดสอบหัวข้อ ' +
+           '"Tests for accuracy & Verification of markings test (Current Transformer for Low Voltage system)"'
+    },
+    {
+      // H.V. CT (ไม่เกิน 33 kV)
+      codes: [
+        "1060040019", "1060040020", "1060040021", "1060040022", "1060040023",
+        "1060040024", "1060040025", "1060040026", "1060040027", "1060040028",
+        "1060040029", "1060040030", "1060040031", "1060040032", "1060040033",
+        "1060040112", "1060040113", "1060040114", "1060040115", "1060040116",
+        "1060040117", "1060040118", "1060040119", "1060040120", "1060040121",
+        "1060040122"
+      ],
+      ref: refHead + '"Power-frequency voltage withstand tests on secondary terminals, ' +
+           'Power-frequency voltage withstand tests on primary terminals [Common mode (separate source) power-frequency withstand test], ' +
+           'Inter-turn overvoltage test และ Partial discharge measurement test" ' +
+           'และจำนวนตัวอย่างที่เหลือทดสอบหัวข้อ "Tests for accuracy & Verification of markings test"'
+    },
+    {
+      // H.V. VT (ไม่เกิน 33 kV)
+      codes: ["1060020007", "1060020105"],
+      ref: refHead + '"Power-frequency voltage withstand tests on secondary terminals, ' +
+           'Power-frequency voltage withstand tests on primary terminals [Common mode (separate source) power-frequency withstand test], ' +
+           'Power-frequency voltage withstand tests on primary terminals [Differential mode (induced) AC voltage test (Induced Overvoltage Test)] ' +
+           'และ Partial discharge measurement test" ' +
+           'และจำนวนตัวอย่างที่เหลือทดสอบหัวข้อ "Tests for accuracy & Verification of markings test"'
+    }
+  ];
+  groups.forEach(function (g) {
+    g.codes.forEach(function (code) {
+      window.SPECIAL_TEST_RULES.byCode[code] = { ref: g.ref, perTestBySample: split };
+    });
   });
 })();
