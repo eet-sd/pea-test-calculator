@@ -4138,6 +4138,266 @@ window.MATERIALS = [
   "specUrl": "https://drive.google.com/file/d/11xxmSFdATn30Pd5n05iKfh1iSkqMnjO5/view?usp=drivesdk"
  },
  {
+  "code": "1020360003",
+  "name": "IPC MAIN 25-95 SQ.MM. TAP 10-50 SQ.MM.",
+  "spec": "RCBL-066/2567",
+  "samplingText": "5  to  50  : 5 \n51  to  500 : 6 \n501  to  35,500  : 8 \nmore than 35,000  : 11",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     50,
+     5
+    ],
+    [
+     51,
+     500,
+     6
+    ],
+    [
+     501,
+     35500,
+     8
+    ],
+    [
+     35001,
+     null,
+     11
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Visual test",
+    "price": 200
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Power frequency dry withstand test up to 5 kV",
+    "price": 500
+   }
+  ],
+  "perSample": 1200,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1DImK0l3hxn-11K_mFw3NZtZduMZbr4dc/view?usp=drivesdk"
+ },
+ {
+  "code": "1020360004",
+  "name": "IPC MAIN 95-240 SQ.MM. TAP 10-50 SQ.MM.",
+  "spec": "RCBL-066/2567",
+  "samplingText": "5  to  50  : 5 \n51  to  500 : 6 \n501  to  35,500  : 8 \nmore than 35,000  : 11",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     50,
+     5
+    ],
+    [
+     51,
+     500,
+     6
+    ],
+    [
+     501,
+     35500,
+     8
+    ],
+    [
+     35001,
+     null,
+     11
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Visual test",
+    "price": 200
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Power frequency dry withstand test up to 5 kV",
+    "price": 500
+   }
+  ],
+  "perSample": 1200,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1DImK0l3hxn-11K_mFw3NZtZduMZbr4dc/view?usp=drivesdk"
+ },
+ {
+  "code": "1020360005",
+  "name": "IPC MAIN 95-240 SQ.MM. TAP 25-95 SQ.MM.",
+  "spec": "RCBL-066/2567",
+  "samplingText": "5  to  50  : 5 \n51  to  500 : 6 \n501  to  35,500  : 8 \nmore than 35,000  : 11",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     50,
+     5
+    ],
+    [
+     51,
+     500,
+     6
+    ],
+    [
+     501,
+     35500,
+     8
+    ],
+    [
+     35001,
+     null,
+     11
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Visual test",
+    "price": 200
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Power frequency dry withstand test up to 5 kV",
+    "price": 500
+   }
+  ],
+  "perSample": 1200,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1DImK0l3hxn-11K_mFw3NZtZduMZbr4dc/view?usp=drivesdk"
+ },
+ {
+  "code": "1020360006",
+  "name": "IPC MAIN 25-95 SQ.MM. TAP 2.5 SQ.MM.",
+  "spec": "RCBL-066/2567",
+  "samplingText": "5  to  50  : 5 \n51  to  500 : 6 \n501  to  35,500  : 8 \nmore than 35,000  : 11",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     50,
+     5
+    ],
+    [
+     51,
+     500,
+     6
+    ],
+    [
+     501,
+     35500,
+     8
+    ],
+    [
+     35001,
+     null,
+     11
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Visual test",
+    "price": 200
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Power frequency dry withstand test up to 5 kV",
+    "price": 500
+   }
+  ],
+  "perSample": 1200,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1DImK0l3hxn-11K_mFw3NZtZduMZbr4dc/view?usp=drivesdk"
+ },
+ {
+  "code": "1020360007",
+  "name": "IPC MAIN 95-240 SQ.MM. TAP 2.5 SQ.MM.",
+  "spec": "RCBL-066/2567",
+  "samplingText": "5  to  50  : 5 \n51  to  500 : 6 \n501  to  35,500  : 8 \nmore than 35,000  : 11",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     50,
+     5
+    ],
+    [
+     51,
+     500,
+     6
+    ],
+    [
+     501,
+     35500,
+     8
+    ],
+    [
+     35001,
+     null,
+     11
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Visual test",
+    "price": 200
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Power frequency dry withstand test up to 5 kV",
+    "price": 500
+   }
+  ],
+  "perSample": 1200,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1DImK0l3hxn-11K_mFw3NZtZduMZbr4dc/view?usp=drivesdk"
+ },
+ {
   "code": "1020400012",
   "name": "SLEEVE,TENSION AL 50 SQ.MM.",
   "spec": "RCBL-073/2564",
@@ -4436,6 +4696,44 @@ window.MATERIALS = [
    "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)"
   ],
   "specUrl": "https://drive.google.com/file/d/10JCgb9EyR3oevfv73pCTAySdbSu0mlBB/view?usp=drivesdk"
+ },
+ {
+  "code": "1020410009",
+  "name": "CONN.,SPLICE,TENSIONLESS AL 400 SQ.MM.",
+  "spec": "RCBL-506/2546",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4000,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-MAPeswJI5LjGLy5A0ZfL9kCAOY5_fnQ/view?usp=drivesdk"
  },
  {
   "code": "1020410014",
@@ -5387,6 +5685,132 @@ window.MATERIALS = [
   "specUrl": "https://drive.google.com/file/d/12GeWYb3DhbIyyjMTwggnAENVWUuTpz8T/view?usp=drivesdk"
  },
  {
+  "code": "1020500001",
+  "name": "CONN.,T-TYPE,MAIN 185-240,TAP 50",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020500002",
+  "name": "CONN.,T-TYPE,MAIN 185-240,TAP 185-240",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020500003",
+  "name": "CONN.,T-TYPE, AL,MAIN 400 ,TAP 50-70",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
   "code": "1020500004",
   "name": "CONN.,T-TYPE, AL,MAIN 400,TAP OFF 95-185",
   "spec": "RCBL-018/2564",
@@ -5551,10 +5975,1164 @@ window.MATERIALS = [
   "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
  },
  {
+  "code": "1020500100",
+  "name": "CONN.,T-TYPE,COMP.,AL MAIN 400,4-HOLE",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4000,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020500202",
+  "name": "CONN.,T-TYPE,TUBING 3 TO TAP 185-240",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020500203",
+  "name": "CONN.,T-TYPE,TUBING 3 TO TAP 400 SQ.MM.",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020500204",
+  "name": "CONN.,T-TYPE,TUBING 3 TO TAP 625 SQ.MM.",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020500208",
+  "name": "CONN.,T-TYPE,TUBING 3 TO 4-HOLE PAD",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020510001",
+  "name": "CONN.,ANGLE T,TUBING 3,TUBE TAP 1 1/2",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020520001",
+  "name": "CONN.,ANGLE V,TUBING 3,TAP 1 1/2",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020530004",
+  "name": "CONN.,COUPLER,FOR AL TUBE 3",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020550101",
+  "name": "CORONA BELL,FOR TUBE 76 MM.(3)IPS.",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4000,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020560001",
+  "name": "CONN.,FOR 2 COND. 400,4-HOLE PAD",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020560101",
+  "name": "CONN.,EXPANSION,TUBE 3,2-HOLE PAD",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020560102",
+  "name": "CONN.,EXPANSION,TUBE 3,4-HOLE PAD",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020560200",
+  "name": "PAD COUPLER,AL-ALLOY,T-TYPE",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4000,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020560201",
+  "name": "PAD COUPLER,AL-ALLOY,STRAIGHT-TYPE",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4000,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020570000",
+  "name": "BUS SUPPORT 3,BC,AL COND. 240 SQ.MM.",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020570001",
+  "name": "BUS SUPPORT 3,BC,AL COND. 400 SQ.MM.",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020570002",
+  "name": "BUS SUPPORT 3,BC,AL COND. 625 SQ.MM.",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020570003",
+  "name": "BUS SUPPORT 3,BC,2 AL COND. 400 SQ.MM.",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020570004",
+  "name": "BUS SUPPORT 3,BC,2 AL COND. 625 SQ.MM.",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020570006",
+  "name": "BUS SUPPORT 3,BC FOR AL TUBE 3IPS.",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1020570104",
+  "name": "BUS SUPPORT 5,BC FOR AL TUBE 3IPS.",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
+ },
+ {
+  "code": "1030010008",
+  "name": "INSULATOR,LINE-POST,57-2,TIS.2623",
+  "spec": "RINS-017/2567",
+  "samplingText": "3",
+  "sampling": {
+   "type": "fixed",
+   "n": 3
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Visual test",
+    "price": 200
+   },
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Leakage distance",
+    "price": 300
+   },
+   {
+    "name": "Tensile strength up to 500 kN",
+    "price": 900
+   },
+   {
+    "name": "Coating thickness (Magnetic, Eddy current)",
+    "price": 400
+   },
+   {
+    "name": "Power frequency dry flashover test",
+    "price": 3500
+   },
+   {
+    "name": "Porosity test",
+    "price": 2200
+   }
+  ],
+  "perSample": 7800,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "หน่วยทดสอบเครือข่าย",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1nxNo7dg6XHdi7Qc1-Olj-h9OcOT5IyaK/view?usp=drivesdk"
+ },
+ {
+  "code": "1030010009",
+  "name": "INSULATOR,LINE-POST,57-3,TIS.2623",
+  "spec": "RINS-017/2567",
+  "samplingText": "3",
+  "sampling": {
+   "type": "fixed",
+   "n": 3
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Visual test",
+    "price": 200
+   },
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Leakage distance",
+    "price": 300
+   },
+   {
+    "name": "Tensile strength up to 500 kN",
+    "price": 900
+   },
+   {
+    "name": "Coating thickness (Magnetic, Eddy current)",
+    "price": 400
+   },
+   {
+    "name": "Power frequency dry flashover test",
+    "price": 3500
+   },
+   {
+    "name": "Porosity test",
+    "price": 2200
+   }
+  ],
+  "perSample": 7800,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "หน่วยทดสอบเครือข่าย",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1nxNo7dg6XHdi7Qc1-Olj-h9OcOT5IyaK/view?usp=drivesdk"
+ },
+ {
+  "code": "1030010010",
+  "name": "INSULATOR,LINE-POST,57-4,TIS.2623",
+  "spec": "RINS-017/2567",
+  "samplingText": "3",
+  "sampling": {
+   "type": "fixed",
+   "n": 3
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Visual test",
+    "price": 200
+   },
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Leakage distance",
+    "price": 300
+   },
+   {
+    "name": "Tensile strength up to 500 kN",
+    "price": 900
+   },
+   {
+    "name": "Coating thickness (Magnetic, Eddy current)",
+    "price": 400
+   },
+   {
+    "name": "Power frequency dry flashover test",
+    "price": 3500
+   },
+   {
+    "name": "Porosity test",
+    "price": 2200
+   }
+  ],
+  "perSample": 7800,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "หน่วยทดสอบเครือข่าย",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1nxNo7dg6XHdi7Qc1-Olj-h9OcOT5IyaK/view?usp=drivesdk"
+ },
+ {
+  "code": "1030010104",
+  "name": "INSULATOR,PIN-POST,56/57-2,TIS.2623",
+  "spec": "RINS-018/2568",
+  "samplingText": "3",
+  "sampling": {
+   "type": "fixed",
+   "n": 3
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Visual test",
+    "price": 200
+   },
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Leakage distance",
+    "price": 300
+   },
+   {
+    "name": "Tensile strength up to 500 kN",
+    "price": 900
+   },
+   {
+    "name": "Coating thickness (Magnetic, Eddy current)",
+    "price": 400
+   },
+   {
+    "name": "Power frequency dry flashover test",
+    "price": 3500
+   },
+   {
+    "name": "Porosity test",
+    "price": 2200
+   }
+  ],
+  "perSample": 7800,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "หน่วยทดสอบเครือข่าย",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Pm7c5bxCYn6_hVS3_AJFEGE8eiNgQ2i/view?usp=drivesdk"
+ },
+ {
+  "code": "1030010105",
+  "name": "INSULATOR,PIN-POST,56/57-3,TIS.2623",
+  "spec": "RINS-018/2568",
+  "samplingText": "3",
+  "sampling": {
+   "type": "fixed",
+   "n": 3
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Visual test",
+    "price": 200
+   },
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Leakage distance",
+    "price": 300
+   },
+   {
+    "name": "Tensile strength up to 500 kN",
+    "price": 900
+   },
+   {
+    "name": "Coating thickness (Magnetic, Eddy current)",
+    "price": 400
+   },
+   {
+    "name": "Power frequency dry flashover test",
+    "price": 3500
+   },
+   {
+    "name": "Porosity test",
+    "price": 2200
+   }
+  ],
+  "perSample": 7800,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "หน่วยทดสอบเครือข่าย",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Pm7c5bxCYn6_hVS3_AJFEGE8eiNgQ2i/view?usp=drivesdk"
+ },
+ {
+  "code": "1030010106",
+  "name": "INSULATOR,PIN-POST,56/57-4,TIS.2623",
+  "spec": "RINS-018/2568",
+  "samplingText": "3",
+  "sampling": {
+   "type": "fixed",
+   "n": 3
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Visual test",
+    "price": 200
+   },
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Leakage distance",
+    "price": 300
+   },
+   {
+    "name": "Tensile strength up to 500 kN",
+    "price": 900
+   },
+   {
+    "name": "Coating thickness (Magnetic, Eddy current)",
+    "price": 400
+   },
+   {
+    "name": "Power frequency dry flashover test",
+    "price": 3500
+   },
+   {
+    "name": "Porosity test",
+    "price": 2200
+   }
+  ],
+  "perSample": 7800,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "หน่วยทดสอบเครือข่าย",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Pm7c5bxCYn6_hVS3_AJFEGE8eiNgQ2i/view?usp=drivesdk"
+ },
+ {
   "code": "1030020100",
   "name": "COMP. INS.,SUSPENSION,1.1-1.2 M.,110 KN.",
   "spec": "RINS-003/2561",
-  "samplingText": "N ≤ 300   : 5  \n 300 < N ≤ 2 000 : 7 \n 2 000 < N ≤ 5 000  : 12 \n 5 000 < N ≤ 10 000  : 18",
+  "samplingText": "N ≤ 300   : 5  \n 300 < N ≤ 2000 : 7 \n 2000 < N ≤ 5000  : 12 \n 5000 < N ≤ 10000  : 18",
   "sampling": {
    "type": "tiers",
    "tiers": [
@@ -5610,7 +7188,7 @@ window.MATERIALS = [
   "code": "1030020101",
   "name": "COMP. INS.,SUSPENSION,1.5-1.6 M.,110 KN.",
   "spec": "RINS-003/2561",
-  "samplingText": "N ≤ 300   : 5  \n 300 < N ≤ 2 000 : 7 \n 2 000 < N ≤ 5 000  : 12 \n 5 000 < N ≤ 10 000  : 18",
+  "samplingText": "N ≤ 300   : 5  \n 300 < N ≤ 2000 : 7 \n 2000 < N ≤ 5000  : 12 \n 5000 < N ≤ 10000  : 18",
   "sampling": {
    "type": "tiers",
    "tiers": [
@@ -5666,7 +7244,7 @@ window.MATERIALS = [
   "code": "1030020103",
   "name": "COMP. INS.,SUSPENSION,1.5-1.6 M.,220 KN.",
   "spec": "RINS-003/2561",
-  "samplingText": "N ≤ 300   : 5  \n 300 < N ≤ 2 000 : 7 \n 2 000 < N ≤ 5 000  : 12 \n 5 000 < N ≤ 10 000  : 18",
+  "samplingText": "N ≤ 300   : 5  \n 300 < N ≤ 2000 : 7 \n 2000 < N ≤ 5000  : 12 \n 5000 < N ≤ 10000  : 18",
   "sampling": {
    "type": "tiers",
    "tiers": [
@@ -5717,6 +7295,114 @@ window.MATERIALS = [
    "สถาบันทดสอบกลาง"
   ],
   "specUrl": "https://drive.google.com/file/d/12SXcqtxHO5rnlks8gchS4jPHox3QFc-Y/view?usp=drivesdk"
+ },
+ {
+  "code": "1030030000",
+  "name": "INSULATOR,SPOOL,CLASS 53-2 TIS.227",
+  "spec": "RINS-020/2568",
+  "samplingText": "5",
+  "sampling": {
+   "type": "fixed",
+   "n": 5
+  },
+  "samplingSource": "",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Tensile strength up to 500 kN",
+    "price": 900
+   },
+   {
+    "name": "Power frequency dry flashover test",
+    "price": 3500
+   },
+   {
+    "name": "Porosity test",
+    "price": 2200
+   }
+  ],
+  "perSample": 6900,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "หน่วยทดสอบเครือข่าย",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1y0onSpXAvDB6fLXRtgiow28QjYsueayz/view?usp=drivesdk"
+ },
+ {
+  "code": "1030030100",
+  "name": "INSULATOR,STRAIN,CLASS 54-1",
+  "spec": "RINS-021/2568",
+  "samplingText": "5",
+  "sampling": {
+   "type": "fixed",
+   "n": 5
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Visual test",
+    "price": 200
+   },
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Tensile strength up to 500 kN",
+    "price": 900
+   },
+   {
+    "name": "Porosity test",
+    "price": 2200
+   }
+  ],
+  "perSample": 3600,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "หน่วยทดสอบเครือข่าย",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1gLGJ41mmpcIWNf5mDVXx7OrWZLIbqZ3B/view?usp=drivesdk"
+ },
+ {
+  "code": "1030030103",
+  "name": "INSULATOR,STRAIN,CLASS 54-4",
+  "spec": "RINS-021/2568",
+  "samplingText": "5",
+  "sampling": {
+   "type": "fixed",
+   "n": 5
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Visual test",
+    "price": 200
+   },
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Tensile strength up to 500 kN",
+    "price": 900
+   },
+   {
+    "name": "Porosity test",
+    "price": 2200
+   }
+  ],
+  "perSample": 3600,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "หน่วยทดสอบเครือข่าย",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1gLGJ41mmpcIWNf5mDVXx7OrWZLIbqZ3B/view?usp=drivesdk"
  },
  {
   "code": "1030120004",
@@ -5779,6 +7465,48 @@ window.MATERIALS = [
    "สถาบันทดสอบกลาง"
   ],
   "specUrl": "https://drive.google.com/file/d/1ZYraSGy_hIE8BDQ4bsqaEbzXxXB7dDzs/view?usp=drivesdk"
+ },
+ {
+  "code": "1030120201",
+  "name": "CLAMP,SUSPENTION,AL TUBE 3IPS.",
+  "spec": "RCBL-018/2564",
+  "samplingText": "not more than 500 : 3\nmore than 500 : 5",
+  "sampling": {
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     500,
+     3
+    ],
+    [
+     501,
+     null,
+     5
+    ]
+   ]
+  },
+  "samplingSource": "สเปค",
+  "tests": [
+   {
+    "name": "Dimension up to 10 points",
+    "price": 300
+   },
+   {
+    "name": "Torque test",
+    "price": 500
+   },
+   {
+    "name": "Chemical composition (OES)",
+    "price": 3700
+   }
+  ],
+  "perSample": 4500,
+  "institute": [
+   "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
+   "สถาบันทดสอบกลาง"
+  ],
+  "specUrl": "https://drive.google.com/file/d/1-Kpqa_AMRdy6F4upH8TkHHvqhuv_YfA4/view?usp=drivesdk"
  },
  {
   "code": "1030130003",
