@@ -74,6 +74,7 @@ window.SPECIAL_TEST_RULES = {
 // ซื้อต่ำกว่า 5 ตัว = "ตามที่ตกลง" → กรอกจำนวนรายหัวข้อเองในตาราง (ไม่เกินจำนวนที่ซื้อ)
 ["1030020100", "1030020101", "1030020103"].forEach(function (code) {
   window.SPECIAL_TEST_RULES.byCode[code] = {
+    ref: "อ้างอิง: สเปคเลขที่ RINS-003/2561",
     manualPerTestBelowQty: 5,
     perTestBySample: {
       "5":  { "Dimension": 5,  "Leakage distance": 5,  "Tensile strength": 3,  "Coating thickness": 2 },
@@ -109,9 +110,9 @@ window.SPECIAL_TEST_RULES = {
         "1060030000", "1060030001", "1060030002", "1060030003",
         "1060030004", "1060030005", "1060030100"
       ],
-      ref: refHead + '"Power-frequency voltage withstand tests on secondary terminals ' +
-           'และ Inter-turn overvoltage test" และจำนวนตัวอย่างที่เหลือทดสอบหัวข้อ ' +
-           '"Tests for accuracy & Verification of markings test (Current Transformer for Low Voltage system)"'
+      ref: refHead + 'Power-frequency voltage withstand tests on secondary terminals ' +
+           'และ Inter-turn overvoltage test และจำนวนตัวอย่างที่เหลือทดสอบหัวข้อ ' +
+           'Tests for accuracy & Verification of markings test (Current Transformer for Low Voltage system)'
     },
     {
       // H.V. CT (ไม่เกิน 33 kV)
@@ -123,19 +124,19 @@ window.SPECIAL_TEST_RULES = {
         "1060040117", "1060040118", "1060040119", "1060040120", "1060040121",
         "1060040122"
       ],
-      ref: refHead + '"Power-frequency voltage withstand tests on secondary terminals, ' +
+      ref: refHead + 'Power-frequency voltage withstand tests on secondary terminals, ' +
            'Power-frequency voltage withstand tests on primary terminals [Common mode (separate source) power-frequency withstand test], ' +
-           'Inter-turn overvoltage test และ Partial discharge measurement test" ' +
-           'และจำนวนตัวอย่างที่เหลือทดสอบหัวข้อ "Tests for accuracy & Verification of markings test"'
+           'Inter-turn overvoltage test และ Partial discharge measurement test ' +
+           'และจำนวนตัวอย่างที่เหลือทดสอบหัวข้อ Tests for accuracy & Verification of markings test'
     },
     {
       // H.V. VT (ไม่เกิน 33 kV)
       codes: ["1060020007", "1060020105"],
-      ref: refHead + '"Power-frequency voltage withstand tests on secondary terminals, ' +
+      ref: refHead + 'Power-frequency voltage withstand tests on secondary terminals, ' +
            'Power-frequency voltage withstand tests on primary terminals [Common mode (separate source) power-frequency withstand test], ' +
            'Power-frequency voltage withstand tests on primary terminals [Differential mode (induced) AC voltage test (Induced Overvoltage Test)] ' +
-           'และ Partial discharge measurement test" ' +
-           'และจำนวนตัวอย่างที่เหลือทดสอบหัวข้อ "Tests for accuracy & Verification of markings test"'
+           'และ Partial discharge measurement test ' +
+           'และจำนวนตัวอย่างที่เหลือทดสอบหัวข้อ Tests for accuracy & Verification of markings test'
     }
   ];
   groups.forEach(function (g) {
