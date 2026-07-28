@@ -5683,17 +5683,17 @@ window.MATERIALS = [
   "code": "1020440008",
   "name": "CABLE SPACER,HDPE-MTEC,SAC 50-185 SQ.MM.",
   "spec": "RINS-014/2563",
-  "samplingText": "<10,000 : 5\n>10,000 : 10",
+  "samplingText": "<10,000 : 5\n≥10,000 : 10",
   "sampling": {
    "type": "tiers",
    "tiers": [
     [
      1,
-     10000,
+     9999,
      5
     ],
     [
-     10001,
+     10000,
      null,
      10
     ]
@@ -7186,7 +7186,7 @@ window.MATERIALS = [
   "code": "1030020100",
   "name": "COMP. INS.,SUSPENSION,1.1-1.2 M.,110 KN.",
   "spec": "RINS-003/2561",
-  "samplingText": "N ≤ 300   : 5  \n 300 < N ≤ 2000 : 7 \n 2000 < N ≤ 5000  : 12 \n 5000 < N ≤ 10000  : 18",
+  "samplingText": "N ≤ 300   : 5\n300 < N ≤ 2000 : 7\n2000 < N ≤ 5000  : 12\n5000 < N ≤ 10000  : 18",
   "sampling": {
    "type": "tiers",
    "tiers": [
@@ -7242,7 +7242,7 @@ window.MATERIALS = [
   "code": "1030020101",
   "name": "COMP. INS.,SUSPENSION,1.5-1.6 M.,110 KN.",
   "spec": "RINS-003/2561",
-  "samplingText": "N ≤ 300   : 5  \n 300 < N ≤ 2000 : 7 \n 2000 < N ≤ 5000  : 12 \n 5000 < N ≤ 10000  : 18",
+  "samplingText": "N ≤ 300   : 5\n300 < N ≤ 2000 : 7\n2000 < N ≤ 5000  : 12\n5000 < N ≤ 10000  : 18",
   "sampling": {
    "type": "tiers",
    "tiers": [
@@ -7298,7 +7298,7 @@ window.MATERIALS = [
   "code": "1030020103",
   "name": "COMP. INS.,SUSPENSION,1.5-1.6 M.,220 KN.",
   "spec": "RINS-003/2561",
-  "samplingText": "N ≤ 300   : 5  \n 300 < N ≤ 2000 : 7 \n 2000 < N ≤ 5000  : 12 \n 5000 < N ≤ 10000  : 18",
+  "samplingText": "N ≤ 300   : 5\n300 < N ≤ 2000 : 7\n2000 < N ≤ 5000  : 12\n5000 < N ≤ 10000  : 18",
   "sampling": {
    "type": "tiers",
    "tiers": [
@@ -7352,15 +7352,19 @@ window.MATERIALS = [
  },
  {
   "code": "1030030000",
-  "name": "INSULATOR,SPOOL,CLASS 53-2 TIS.227",
+  "name": "INSULATOR,SPOOL,CLASS 53-2",
   "spec": "RINS-020/2568",
   "samplingText": "5",
   "sampling": {
    "type": "fixed",
    "n": 5
   },
-  "samplingSource": "",
+  "samplingSource": "สเปค",
   "tests": [
+   {
+    "name": "Visual test",
+    "price": 200
+   },
    {
     "name": "Dimension up to 10 points",
     "price": 300
@@ -7370,15 +7374,11 @@ window.MATERIALS = [
     "price": 900
    },
    {
-    "name": "Power frequency dry flashover test",
-    "price": 3500
-   },
-   {
     "name": "Porosity test",
     "price": 2200
    }
   ],
-  "perSample": 6900,
+  "perSample": 3600,
   "institute": [
    "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
    "หน่วยทดสอบเครือข่าย",
@@ -9227,6 +9227,10 @@ window.MATERIALS = [
     "price": 5500
    },
    {
+    "name": "Resistance, resistivity, conductivity",
+    "price": 650
+   },
+   {
     "name": "Accuracy test",
     "price": 2100
    },
@@ -9235,7 +9239,7 @@ window.MATERIALS = [
     "price": 2600
    }
   ],
-  "perSample": 12900,
+  "perSample": 13550,
   "institute": [
    "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
    "หน่วยทดสอบเครือข่าย",
@@ -9268,6 +9272,10 @@ window.MATERIALS = [
     "price": 5500
    },
    {
+    "name": "Resistance, resistivity, conductivity",
+    "price": 650
+   },
+   {
     "name": "Accuracy test",
     "price": 2100
    },
@@ -9276,7 +9284,7 @@ window.MATERIALS = [
     "price": 2600
    }
   ],
-  "perSample": 12900,
+  "perSample": 13550,
   "institute": [
    "กองทดสอบอุปกรณ์ไฟฟ้า (กทฟ.)",
    "หน่วยทดสอบเครือข่าย",
