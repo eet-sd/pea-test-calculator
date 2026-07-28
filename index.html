@@ -358,16 +358,18 @@
             : '<input type="text" inputmode="numeric" class="test-count" data-idx="' + i + '" placeholder="?" value="' + (mc || "") + '">';
           lineCell = excluded || !mc ? "-" : fmt(line);
         } else if (manualMode) {
-          // ชีตไม่กำหนดจำนวนสุ่ม → กรอกจำนวนตัวอย่างรายหัวข้อทับได้ (ว่าง = ใช้จำนวนสุ่มที่กรอกไว้)
+          // ชีตไม่กำหนดจำนวนสุ่ม → กรอกจำนวนตัวอย่างรายหัวข้อทับได้
+          // manualTestCounts[i]: undefined = ยังไม่แตะ, null = ลบจนว่าง (ไม่คิดราคา), ตัวเลข = ค่าที่กรอก
           pc = perTestCount(m, t.name, samples);
-          const shown = manualTestCounts[i] !== undefined ? manualTestCounts[i] : pc.count;
-          line = (t.price || 0) * shown;
+          const raw = manualTestCounts[i];
+          const blank = raw === null;
+          const shown = blank ? "" : (raw !== undefined ? raw : pc.count);
+          line = (t.price || 0) * (blank ? 0 : shown);
           countCell = excluded ? "-"
             : '<input type="text" inputmode="numeric" class="test-count" data-idx="' + i +
-              '" value="' + shown + '">' +
-              (shown === 0 ? ' <span class="special">ไม่ทดสอบ</span>'
-                           : (pc.unit ? " " + esc(pc.unit) : ""));
-          lineCell = excluded ? "-" : fmt(line);
+              '" value="' + shown + '"> <span class="special" data-flag="' + i + '">' +
+              (blank ? "" : (shown === 0 ? "ไม่ทดสอบ" : (pc.unit ? esc(pc.unit) : ""))) + "</span>";
+          lineCell = excluded || blank ? "-" : fmt(line);
         } else {
           pc = perTestCount(m, t.name, samples);
           line = (t.price || 0) * pc.count;
@@ -383,11 +385,11 @@
                 (t.subItems ? t.subItems.map((s) => '<div class="subtest">- ' + esc(s) + "</div>").join("") : "") + "</td>" +
                 '<td class="num">' + countCell + "</td>" +
                 '<td class="num">' + fmt(t.price || 0) + "</td>" +
-                '<td class="num">' + lineCell + "</td></tr>";
+                '<td class="num" data-line="' + i + '">' + lineCell + "</td></tr>";
       });
       html += '<div class="table-scroll"><table><thead><tr><th></th><th>หัวข้อทดสอบ</th><th class="num">จำนวนตัวอย่าง</th><th class="num">ราคา/ตัวอย่าง (บาท)</th><th class="num">รวม (บาท)</th></tr></thead>' +
               "<tbody>" + rows + "</tbody>" +
-              '<tfoot><tr><td colspan="4">รวมค่าทดสอบโดยประมาณ</td><td class="num">' + fmt(grand) + "</td></tr></tfoot></table></div>";
+              '<tfoot><tr><td colspan="4">รวมค่าทดสอบโดยประมาณ</td><td class="num" id="grandTotal">' + fmt(grand) + "</td></tr></tfoot></table></div>";
       if (special && special.ref) {
         html += '<ul class="notes"><li>' + esc(special.ref) + "</li></ul>";
       }
@@ -417,18 +419,56 @@
       });
     }
 
+    // อัปเดตเฉพาะตัวเลขราคาในตาราง ไม่ render ใหม่ — ช่องกรอกจึงไม่ถูกสร้างใหม่ขณะพิมพ์
+    function syncTotals() {
+      let g = 0;
+      m.tests.forEach((t, i) => {
+        if (excludedTests.has(i)) return; // ถูกตัดออก ช่องราคาเป็น "-" อยู่แล้ว
+        const raw = manualTestCounts[i];
+        const blank = raw === null;
+        const count = blank ? 0
+          : (raw !== undefined ? raw : perTestCount(m, t.name, samples).count);
+        const line = (t.price || 0) * count;
+        g += line;
+        const cell = card.querySelector('[data-line="' + i + '"]');
+        if (cell) cell.textContent = blank ? "-" : fmt(line);
+        const flag = card.querySelector('[data-flag="' + i + '"]');
+        if (flag) flag.textContent = !blank && count === 0 ? "ไม่ทดสอบ" : "";
+      });
+      const gt = card.querySelector("#grandTotal");
+      if (gt) gt.textContent = fmt(g);
+    }
+
+    // จำนวนตัวอย่างต่อหัวข้อทดสอบเกินจำนวนสุ่มไม่ได้ (agreedMode ไม่มีจำนวนสุ่ม จึงใช้จำนวนที่ซื้อ)
+    const perTestCap = samples !== null ? samples : (qty >= 1 ? qty : null);
+
     card.querySelectorAll(".test-count").forEach((inp) => {
       inp.addEventListener("input", () => {
         const i = parseInt(inp.dataset.idx, 10);
-        const cap = parseInt(qtyEl.value, 10);
-        const v = parseInt(inp.value, 10);
-        // ว่าง/ไม่ใช่ตัวเลข = ยกเลิกการกรอกทับ (กลับไปใช้ค่าที่คำนวณ), 0 = ไม่ทดสอบ
-        if (v >= 0) manualTestCounts[i] = cap >= 1 ? Math.min(v, cap) : v;
-        else delete manualTestCounts[i];
-        const pos = inp.selectionStart;
-        render();
-        const again = result.querySelector('.test-count[data-idx="' + i + '"]');
-        if (again) { again.focus(); try { again.setSelectionRange(pos, pos); } catch (_) {} }
+        const s = inp.value.trim();
+        // ว่าง = ไม่คิดราคาแถวนี้ (เก็บเป็น null ไม่งั้นเลขเดิมจะเด้งกลับมาทันทีที่ลบ)
+        if (s === "") manualTestCounts[i] = null;
+        else if (/^\d+$/.test(s)) manualTestCounts[i] = parseInt(s, 10);
+        else return; // พิมพ์อย่างอื่น ปล่อยไว้ก่อน เดี๋ยวแก้ตอน blur
+        syncTotals();
+      });
+      // ตัดค่าให้ไม่เกินจำนวนสุ่ม (และล้างค่าที่พิมพ์มั่ว) ตอนคลิกออกจากช่อง ไม่ใช่ระหว่างพิมพ์
+      inp.addEventListener("blur", () => {
+        const i = parseInt(inp.dataset.idx, 10);
+        const s = inp.value.trim();
+        if (s === "") { manualTestCounts[i] = null; syncTotals(); return; }
+        if (!/^\d+$/.test(s)) {                      // พิมพ์มั่ว → ดึงค่าที่เก็บไว้กลับมาแสดง
+          const raw = manualTestCounts[i];
+          inp.value = raw === null ? ""
+            : (raw !== undefined ? raw : perTestCount(m, m.tests[i].name, samples).count);
+          syncTotals();
+          return;
+        }
+        let v = parseInt(s, 10);
+        if (perTestCap !== null) v = Math.min(v, perTestCap);
+        manualTestCounts[i] = v;
+        inp.value = v;
+        syncTotals();
       });
     });
   }
