@@ -175,6 +175,8 @@
     if (special) {
       const v = findIn(special.perTestBySample && special.perTestBySample[String(samples)]);
       if (v !== undefined) return { count: v, special: true };
+      const f = findIn(special.perTestFixed);
+      if (f !== undefined) return { count: Math.min(f, samples), special: true };
       if (inList(special.pairTests)) {
         return { count: Math.floor(samples / 2), special: true, unit: "คู่" };
       }
@@ -283,7 +285,7 @@
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".search-box")) suggest.hidden = true;
   });
-  qtyEl.addEventListener("input", () => { manualSamples = null; render(); });
+  qtyEl.addEventListener("input", () => { manualSamples = null; manualTestCounts = {}; render(); });
 
   // ---------- render ----------
   function render() {
@@ -357,9 +359,14 @@
           lineCell = excluded || !mc ? "-" : fmt(line);
         } else {
           pc = perTestCount(m, t.name, samples);
-          line = (t.price || 0) * pc.count;
+          // กรอกจำนวนตัวอย่างรายหัวข้อทับค่าที่คำนวณได้ (ว่าง = ใช้ค่าที่คำนวณ)
+          const shown = manualTestCounts[i] !== undefined ? manualTestCounts[i] : pc.count;
+          line = (t.price || 0) * shown;
           countCell = excluded ? "-"
-            : (pc.count === 0 ? "ไม่ทดสอบ" : fmt(pc.count) + (pc.unit ? " " + pc.unit : ""));
+            : '<input type="text" inputmode="numeric" class="test-count" data-idx="' + i +
+              '" value="' + shown + '">' +
+              (shown === 0 ? ' <span class="special">ไม่ทดสอบ</span>'
+                           : (pc.unit ? " " + esc(pc.unit) : ""));
           lineCell = excluded ? "-" : fmt(line);
         }
         if (!excluded) grand += line;
@@ -396,6 +403,7 @@
       se.addEventListener("input", () => {
         const v = parseInt(se.value, 10);
         manualSamples = v >= 1 ? v : null;
+        manualTestCounts = {}; // จำนวนสุ่มเปลี่ยน → ทิ้งจำนวนรายหัวข้อที่กรอกทับไว้
         const pos = se.selectionStart;
         render();
         const se2 = result.querySelector("#sampleEdit");
@@ -408,7 +416,8 @@
         const i = parseInt(inp.dataset.idx, 10);
         const cap = parseInt(qtyEl.value, 10);
         const v = parseInt(inp.value, 10);
-        if (v >= 1) manualTestCounts[i] = cap >= 1 ? Math.min(v, cap) : v;
+        // ว่าง/ไม่ใช่ตัวเลข = ยกเลิกการกรอกทับ (กลับไปใช้ค่าที่คำนวณ), 0 = ไม่ทดสอบ
+        if (v >= 0) manualTestCounts[i] = cap >= 1 ? Math.min(v, cap) : v;
         else delete manualTestCounts[i];
         const pos = inp.selectionStart;
         render();
