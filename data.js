@@ -7186,12 +7186,17 @@ window.MATERIALS = [
   "code": "1030020100",
   "name": "COMP. INS.,SUSPENSION,1.1-1.2 M.,110 KN.",
   "spec": "RINS-003/2561",
-  "samplingText": "N ≤ 300   : 5\n300 < N ≤ 2000 : 7\n2000 < N ≤ 5000  : 12\n5000 < N ≤ 10000  : 18",
+  "samplingText": "1 to 30 : 3\n31 to 300 : 5\n301 to 2,000 : 7\n2,001 to 5,000 : 12\n5,001 to 10,000 : 18",
   "sampling": {
    "type": "tiers",
    "tiers": [
     [
      1,
+     30,
+     3
+    ],
+    [
+     31,
      300,
      5
     ],
@@ -7242,12 +7247,17 @@ window.MATERIALS = [
   "code": "1030020101",
   "name": "COMP. INS.,SUSPENSION,1.5-1.6 M.,110 KN.",
   "spec": "RINS-003/2561",
-  "samplingText": "N ≤ 300   : 5\n300 < N ≤ 2000 : 7\n2000 < N ≤ 5000  : 12\n5000 < N ≤ 10000  : 18",
+  "samplingText": "1 to 30 : 3\n31 to 300 : 5\n301 to 2,000 : 7\n2,001 to 5,000 : 12\n5,001 to 10,000 : 18",
   "sampling": {
    "type": "tiers",
    "tiers": [
     [
      1,
+     30,
+     3
+    ],
+    [
+     31,
      300,
      5
     ],
@@ -7298,12 +7308,17 @@ window.MATERIALS = [
   "code": "1030020103",
   "name": "COMP. INS.,SUSPENSION,1.5-1.6 M.,220 KN.",
   "spec": "RINS-003/2561",
-  "samplingText": "N ≤ 300   : 5\n300 < N ≤ 2000 : 7\n2000 < N ≤ 5000  : 12\n5000 < N ≤ 10000  : 18",
+  "samplingText": "1 to 30 : 3\n31 to 300 : 5\n301 to 2,000 : 7\n2,001 to 5,000 : 12\n5,001 to 10,000 : 18",
   "sampling": {
    "type": "tiers",
    "tiers": [
     [
      1,
+     30,
+     3
+    ],
+    [
+     31,
      300,
      5
     ],
