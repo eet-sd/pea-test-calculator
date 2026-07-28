@@ -357,9 +357,9 @@
           countCell = excluded ? "-"
             : '<input type="text" inputmode="numeric" class="test-count" data-idx="' + i + '" placeholder="?" value="' + (mc || "") + '">';
           lineCell = excluded || !mc ? "-" : fmt(line);
-        } else {
+        } else if (manualMode) {
+          // ชีตไม่กำหนดจำนวนสุ่ม → กรอกจำนวนตัวอย่างรายหัวข้อทับได้ (ว่าง = ใช้จำนวนสุ่มที่กรอกไว้)
           pc = perTestCount(m, t.name, samples);
-          // กรอกจำนวนตัวอย่างรายหัวข้อทับค่าที่คำนวณได้ (ว่าง = ใช้ค่าที่คำนวณ)
           const shown = manualTestCounts[i] !== undefined ? manualTestCounts[i] : pc.count;
           line = (t.price || 0) * shown;
           countCell = excluded ? "-"
@@ -367,6 +367,12 @@
               '" value="' + shown + '">' +
               (shown === 0 ? ' <span class="special">ไม่ทดสอบ</span>'
                            : (pc.unit ? " " + esc(pc.unit) : ""));
+          lineCell = excluded ? "-" : fmt(line);
+        } else {
+          pc = perTestCount(m, t.name, samples);
+          line = (t.price || 0) * pc.count;
+          countCell = excluded ? "-"
+            : (pc.count === 0 ? "ไม่ทดสอบ" : fmt(pc.count) + (pc.unit ? " " + pc.unit : ""));
           lineCell = excluded ? "-" : fmt(line);
         }
         if (!excluded) grand += line;
