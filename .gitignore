@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 brief-randomsam.txt
 tools/sheet_latest.csv
+
+# เอกสารทำงานภายใน — เก็บไว้ในเครื่อง/Google Drive ไม่ต้องขึ้นเว็บ
+CHANGELOG-*.md
+sheet_changes_*.md
