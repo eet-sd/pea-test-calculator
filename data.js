@@ -120,9 +120,31 @@ window.MATERIALS = [
   "code": "1010100002",
   "name": "ST. WIRE, STRANDED 25 SQ.MM.TIS.404",
   "spec": "RCBL-007/2569",
-  "samplingText": "",
+  "samplingText": "1-1,500 : 1\n1,501-9000 : 2\n9,001-45,000 : 3\nmore than 45,000 : 4",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1500,
+     1
+    ],
+    [
+     1501,
+     9000,
+     2
+    ],
+    [
+     9001,
+     45000,
+     3
+    ],
+    [
+     45001,
+     null,
+     4
+    ]
+   ]
   },
   "samplingSource": "",
   "tests": [
@@ -155,9 +177,31 @@ window.MATERIALS = [
   "code": "1010100003",
   "name": "ST. WIRE, STRANDED 35 SQ.MM.TIS.404",
   "spec": "RCBL-007/2569",
-  "samplingText": "",
+  "samplingText": "1-1,500 : 1\n1,501-9000 : 2\n9,001-45,000 : 3\nmore than 45,000 : 4",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1500,
+     1
+    ],
+    [
+     1501,
+     9000,
+     2
+    ],
+    [
+     9001,
+     45000,
+     3
+    ],
+    [
+     45001,
+     null,
+     4
+    ]
+   ]
   },
   "samplingSource": "",
   "tests": [
@@ -190,9 +234,31 @@ window.MATERIALS = [
   "code": "1010100004",
   "name": "ST. WIRE, STRANDED 50/7 SQ.MM.TIS.404",
   "spec": "RCBL-007/2569",
-  "samplingText": "",
+  "samplingText": "1-1,500 : 1\n1,501-9000 : 2\n9,001-45,000 : 3\nmore than 45,000 : 4",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1500,
+     1
+    ],
+    [
+     1501,
+     9000,
+     2
+    ],
+    [
+     9001,
+     45000,
+     3
+    ],
+    [
+     45001,
+     null,
+     4
+    ]
+   ]
   },
   "samplingSource": "",
   "tests": [
@@ -225,9 +291,31 @@ window.MATERIALS = [
   "code": "1010100006",
   "name": "ST. WIRE, STRANDED 95 SQ.MM.TIS.404",
   "spec": "RCBL-007/2569",
-  "samplingText": "",
+  "samplingText": "1-1,500 : 1\n1,501-9000 : 2\n9,001-45,000 : 3\nmore than 45,000 : 4",
   "sampling": {
-   "type": "none"
+   "type": "tiers",
+   "tiers": [
+    [
+     1,
+     1500,
+     1
+    ],
+    [
+     1501,
+     9000,
+     2
+    ],
+    [
+     9001,
+     45000,
+     3
+    ],
+    [
+     45001,
+     null,
+     4
+    ]
+   ]
   },
   "samplingSource": "",
   "tests": [
