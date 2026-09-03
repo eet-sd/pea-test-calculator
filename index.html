@@ -401,7 +401,8 @@
       const notes = [];
       if (special && special.ref) notes.push(special.ref);
       // ข้อกำหนดขนาดตัวอย่างที่ต้องส่งทดสอบ (เช่น ลวดเหล็กที่นับเป็นขด/เมตร)
-      if (qtyInfo(m).sampleNote) notes.push(qtyInfo(m).sampleNote);
+      // หัวข้อ "การส่งทดสอบ" ใส่ตรงนี้ที่เดียว rules.js เก็บแต่ตัวข้อกำหนด
+      if (qtyInfo(m).sampleNote) notes.push("การส่งทดสอบ : " + qtyInfo(m).sampleNote);
       if (notes.length) {
         html += '<ul class="notes">' + notes.map((n) => "<li>" + esc(n) + "</li>").join("") + "</ul>";
       }
