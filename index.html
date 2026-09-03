@@ -138,6 +138,11 @@
   "use strict";
   const MATS = window.MATERIALS || [];
   const SPECIAL = window.SPECIAL_TEST_RULES || { perTestAlways1: [], byCode: {} };
+  const QTY_INFO = window.QTY_INFO || {};
+  // ข้อมูลรายรหัสพัสดุที่ผูกกับจำนวน — หน่วย (ไม่ระบุ = ตัว) + ข้อกำหนดขนาดตัวอย่าง ดู rules.js
+  function qtyInfo(mat) {
+    return (mat && QTY_INFO[mat.code]) || { unit: "ตัว", en: "" };
+  }
   const $ = (id) => document.getElementById(id);
   const fmt = (n) => n.toLocaleString("th-TH");
 
@@ -289,6 +294,9 @@
 
   // ---------- render ----------
   function render() {
+    // คำใบ้หน่วยใต้ช่อง "จำนวนที่ซื้อ" เปลี่ยนตามรหัสพัสดุที่เลือก
+    const u = qtyInfo(selected);
+    $("unitHint").textContent = "(" + u.unit + (u.en ? " / " + u.en : "") + ") เช่น 500";
     result.innerHTML = "";
     if (!selected) return;
     const m = selected;
@@ -298,7 +306,7 @@
     card.className = "panel";
 
     let html = '<p class="mat-head">รหัสพัสดุ <span class="code">' + m.code + "</span> " + esc(m.name);
-    if (qty >= 1) html += " — ซื้อจำนวน " + fmt(qty) + " ตัว";
+    if (qty >= 1) html += " — ซื้อจำนวน " + fmt(qty) + " " + qtyInfo(m).unit;
     html += "</p>";
     if (m.spec) {
       html += '<p class="sub">สเปค: ' + (m.specUrl
@@ -390,8 +398,12 @@
       html += '<div class="table-scroll"><table><thead><tr><th></th><th>หัวข้อทดสอบ</th><th class="num">จำนวนตัวอย่าง</th><th class="num">ราคา/ตัวอย่าง (บาท)</th><th class="num">รวม (บาท)</th></tr></thead>' +
               "<tbody>" + rows + "</tbody>" +
               '<tfoot><tr><td colspan="4">รวมค่าทดสอบโดยประมาณ</td><td class="num" id="grandTotal">' + fmt(grand) + "</td></tr></tfoot></table></div>";
-      if (special && special.ref) {
-        html += '<ul class="notes"><li>' + esc(special.ref) + "</li></ul>";
+      const notes = [];
+      if (special && special.ref) notes.push(special.ref);
+      // ข้อกำหนดขนาดตัวอย่างที่ต้องส่งทดสอบ (เช่น ลวดเหล็กที่นับเป็นขด/เมตร)
+      if (qtyInfo(m).sampleNote) notes.push(qtyInfo(m).sampleNote);
+      if (notes.length) {
+        html += '<ul class="notes">' + notes.map((n) => "<li>" + esc(n) + "</li>").join("") + "</ul>";
       }
     }
 
